@@ -16,5 +16,6 @@ namespace Desktop.Auth
         {
             InitializeComponent();
         }
+
     }
 }
