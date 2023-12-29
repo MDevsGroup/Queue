@@ -1,4 +1,5 @@
 using Desktop.Auth;
+using Desktop.Hodimlar;
 
 namespace Desktop
 {
@@ -13,7 +14,9 @@ namespace Desktop
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Register());
+            //Application.Run(new Register());
+            Application.Run(new MacBookPro());
+
         }
     }
 }
