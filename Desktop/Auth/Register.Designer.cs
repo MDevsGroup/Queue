@@ -42,8 +42,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             IsmTextBox = new Guna.UI2.WinForms.Guna2TextBox();
@@ -58,8 +56,8 @@
             guna2HtmlLabel7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             SaqlashBtn = new Guna.UI2.WinForms.Guna2Button();
             guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            LoginBtn = new Guna.UI2.WinForms.Guna2Button();
             telBox = new Guna.UI2.WinForms.Guna2TextBox();
+            LoginLink = new LinkLabel();
             SuspendLayout();
             // 
             // guna2HtmlLabel1
@@ -110,6 +108,8 @@
             IsmTextBox.ShadowDecoration.CustomizableEdges = customizableEdges2;
             IsmTextBox.Size = new Size(340, 34);
             IsmTextBox.TabIndex = 2;
+            IsmTextBox.TextChanged += IsmTextBox_TextChanged;
+            IsmTextBox.KeyPress += IsmTextBox_KeyPress;
             // 
             // FamiliyaTextBox
             // 
@@ -136,6 +136,8 @@
             FamiliyaTextBox.ShadowDecoration.CustomizableEdges = customizableEdges4;
             FamiliyaTextBox.Size = new Size(340, 34);
             FamiliyaTextBox.TabIndex = 4;
+            FamiliyaTextBox.TextChanged += FamiliyaTextBox_TextChanged;
+            FamiliyaTextBox.KeyPress += FamiliyaTextBox_KeyPress;
             // 
             // guna2HtmlLabel3
             // 
@@ -223,6 +225,7 @@
             ParolniTastiqlashBox.Size = new Size(340, 40);
             ParolniTastiqlashBox.TabIndex = 12;
             ParolniTastiqlashBox.UseSystemPasswordChar = true;
+            ParolniTastiqlashBox.TextChanged += ParolniTastiqlashBox_TextChanged;
             // 
             // guna2HtmlLabel6
             // 
@@ -261,6 +264,7 @@
             ParolTextBox.Size = new Size(340, 40);
             ParolTextBox.TabIndex = 10;
             ParolTextBox.UseSystemPasswordChar = true;
+            ParolTextBox.TextChanged += ParolTextBox_TextChanged;
             // 
             // guna2HtmlLabel7
             // 
@@ -291,6 +295,7 @@
             SaqlashBtn.Size = new Size(430, 45);
             SaqlashBtn.TabIndex = 13;
             SaqlashBtn.Text = "Saqlash";
+            SaqlashBtn.Click += SaqlashBtn_Click;
             // 
             // guna2HtmlLabel8
             // 
@@ -303,31 +308,12 @@
             guna2HtmlLabel8.TabIndex = 14;
             guna2HtmlLabel8.Text = "Akkauntingizga kiring";
             // 
-            // LoginBtn
-            // 
-            LoginBtn.Anchor = AnchorStyles.None;
-            LoginBtn.BorderRadius = 6;
-            LoginBtn.CustomizableEdges = customizableEdges13;
-            LoginBtn.DisabledState.BorderColor = Color.DarkGray;
-            LoginBtn.DisabledState.CustomBorderColor = Color.DarkGray;
-            LoginBtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            LoginBtn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            LoginBtn.FillColor = Color.White;
-            LoginBtn.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            LoginBtn.ForeColor = Color.FromArgb(0, 101, 243);
-            LoginBtn.Location = new Point(306, 473);
-            LoginBtn.Name = "LoginBtn";
-            LoginBtn.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            LoginBtn.Size = new Size(116, 23);
-            LoginBtn.TabIndex = 15;
-            LoginBtn.Text = "Login";
-            // 
             // telBox
             // 
             telBox.Anchor = AnchorStyles.None;
             telBox.BorderRadius = 5;
             telBox.BorderThickness = 0;
-            telBox.CustomizableEdges = customizableEdges15;
+            telBox.CustomizableEdges = customizableEdges13;
             telBox.DefaultText = "+998";
             telBox.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             telBox.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -340,14 +326,30 @@
             telBox.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             telBox.Location = new Point(178, 225);
             telBox.Margin = new Padding(5);
+            telBox.MaxLength = 13;
             telBox.Name = "telBox";
             telBox.PasswordChar = '\0';
             telBox.PlaceholderText = "";
             telBox.SelectedText = "";
-            telBox.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            telBox.ShadowDecoration.CustomizableEdges = customizableEdges14;
             telBox.Size = new Size(340, 40);
             telBox.TabIndex = 16;
             telBox.TextChanged += telBox_TextChanged;
+            telBox.KeyPress += telBox_KeyPress;
+            // 
+            // LoginLink
+            // 
+            LoginLink.Anchor = AnchorStyles.None;
+            LoginLink.AutoSize = true;
+            LoginLink.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            LoginLink.LinkColor = Color.Navy;
+            LoginLink.Location = new Point(322, 475);
+            LoginLink.Name = "LoginLink";
+            LoginLink.Size = new Size(51, 21);
+            LoginLink.TabIndex = 17;
+            LoginLink.TabStop = true;
+            LoginLink.Text = "Login";
+            LoginLink.LinkClicked += LoginLink_LinkClicked;
             // 
             // Register
             // 
@@ -355,8 +357,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(584, 517);
+            Controls.Add(LoginLink);
             Controls.Add(telBox);
-            Controls.Add(LoginBtn);
             Controls.Add(guna2HtmlLabel8);
             Controls.Add(SaqlashBtn);
             Controls.Add(ParolniTastiqlashBox);
@@ -396,7 +398,7 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel7;
         private Guna.UI2.WinForms.Guna2Button SaqlashBtn;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel8;
-        private Guna.UI2.WinForms.Guna2Button LoginBtn;
         private Guna.UI2.WinForms.Guna2TextBox telBox;
+        private LinkLabel LoginLink;
     }
 }
