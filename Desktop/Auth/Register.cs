@@ -17,5 +17,14 @@ namespace Desktop.Auth
             InitializeComponent();
         }
 
+        private void LovozimBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void telBox_TextChanged(object sender, EventArgs e)
+        {
+          
+        }
     }
 }

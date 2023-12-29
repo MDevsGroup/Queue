@@ -42,6 +42,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             IsmTextBox = new Guna.UI2.WinForms.Guna2TextBox();
@@ -50,7 +52,6 @@
             LovozimBox = new Guna.UI2.WinForms.Guna2TextBox();
             guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            tellBox = new MaskedTextBox();
             ParolniTastiqlashBox = new Guna.UI2.WinForms.Guna2TextBox();
             guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             ParolTextBox = new Guna.UI2.WinForms.Guna2TextBox();
@@ -58,6 +59,7 @@
             SaqlashBtn = new Guna.UI2.WinForms.Guna2Button();
             guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             LoginBtn = new Guna.UI2.WinForms.Guna2Button();
+            telBox = new Guna.UI2.WinForms.Guna2TextBox();
             SuspendLayout();
             // 
             // guna2HtmlLabel1
@@ -96,17 +98,17 @@
             IsmTextBox.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             IsmTextBox.FillColor = Color.FromArgb(243, 244, 246);
             IsmTextBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            IsmTextBox.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            IsmTextBox.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             IsmTextBox.ForeColor = Color.FromArgb(102, 102, 102);
             IsmTextBox.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            IsmTextBox.Location = new Point(178, 63);
-            IsmTextBox.Margin = new Padding(5);
+            IsmTextBox.Location = new Point(178, 59);
+            IsmTextBox.Margin = new Padding(5, 7, 5, 7);
             IsmTextBox.Name = "IsmTextBox";
             IsmTextBox.PasswordChar = '\0';
             IsmTextBox.PlaceholderText = "Ismingizni kiriting";
             IsmTextBox.SelectedText = "";
             IsmTextBox.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            IsmTextBox.Size = new Size(340, 40);
+            IsmTextBox.Size = new Size(340, 34);
             IsmTextBox.TabIndex = 2;
             // 
             // FamiliyaTextBox
@@ -122,17 +124,17 @@
             FamiliyaTextBox.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             FamiliyaTextBox.FillColor = Color.FromArgb(243, 244, 246);
             FamiliyaTextBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            FamiliyaTextBox.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            FamiliyaTextBox.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             FamiliyaTextBox.ForeColor = Color.FromArgb(102, 102, 102);
             FamiliyaTextBox.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            FamiliyaTextBox.Location = new Point(178, 119);
-            FamiliyaTextBox.Margin = new Padding(5);
+            FamiliyaTextBox.Location = new Point(178, 118);
+            FamiliyaTextBox.Margin = new Padding(5, 7, 5, 7);
             FamiliyaTextBox.Name = "FamiliyaTextBox";
             FamiliyaTextBox.PasswordChar = '\0';
             FamiliyaTextBox.PlaceholderText = "Famliyangizni kiriting";
             FamiliyaTextBox.SelectedText = "";
             FamiliyaTextBox.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            FamiliyaTextBox.Size = new Size(340, 40);
+            FamiliyaTextBox.Size = new Size(340, 34);
             FamiliyaTextBox.TabIndex = 4;
             // 
             // guna2HtmlLabel3
@@ -159,18 +161,19 @@
             LovozimBox.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             LovozimBox.FillColor = Color.FromArgb(243, 244, 246);
             LovozimBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            LovozimBox.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            LovozimBox.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             LovozimBox.ForeColor = Color.FromArgb(102, 102, 102);
             LovozimBox.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            LovozimBox.Location = new Point(178, 175);
-            LovozimBox.Margin = new Padding(5);
+            LovozimBox.Location = new Point(178, 179);
+            LovozimBox.Margin = new Padding(5, 7, 5, 7);
             LovozimBox.Name = "LovozimBox";
             LovozimBox.PasswordChar = '\0';
             LovozimBox.PlaceholderText = "Lovozimingizni kiriting";
             LovozimBox.SelectedText = "";
             LovozimBox.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            LovozimBox.Size = new Size(340, 40);
+            LovozimBox.Size = new Size(340, 34);
             LovozimBox.TabIndex = 6;
+            LovozimBox.TextChanged += LovozimBox_TextChanged;
             // 
             // guna2HtmlLabel4
             // 
@@ -194,17 +197,6 @@
             guna2HtmlLabel5.TabIndex = 7;
             guna2HtmlLabel5.Text = "Telefon raqam";
             // 
-            // tellBox
-            // 
-            tellBox.Anchor = AnchorStyles.None;
-            tellBox.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            tellBox.Location = new Point(178, 234);
-            tellBox.Mask = "+000 00 000 0000";
-            tellBox.Name = "tellBox";
-            tellBox.Size = new Size(340, 33);
-            tellBox.TabIndex = 8;
-            tellBox.Text = "998";
-            // 
             // ParolniTastiqlashBox
             // 
             ParolniTastiqlashBox.Anchor = AnchorStyles.None;
@@ -224,12 +216,13 @@
             ParolniTastiqlashBox.Location = new Point(178, 342);
             ParolniTastiqlashBox.Margin = new Padding(5);
             ParolniTastiqlashBox.Name = "ParolniTastiqlashBox";
-            ParolniTastiqlashBox.PasswordChar = '\0';
+            ParolniTastiqlashBox.PasswordChar = '●';
             ParolniTastiqlashBox.PlaceholderText = "";
             ParolniTastiqlashBox.SelectedText = "";
             ParolniTastiqlashBox.ShadowDecoration.CustomizableEdges = customizableEdges8;
             ParolniTastiqlashBox.Size = new Size(340, 40);
             ParolniTastiqlashBox.TabIndex = 12;
+            ParolniTastiqlashBox.UseSystemPasswordChar = true;
             // 
             // guna2HtmlLabel6
             // 
@@ -261,12 +254,13 @@
             ParolTextBox.Location = new Point(178, 282);
             ParolTextBox.Margin = new Padding(5);
             ParolTextBox.Name = "ParolTextBox";
-            ParolTextBox.PasswordChar = '\0';
+            ParolTextBox.PasswordChar = '●';
             ParolTextBox.PlaceholderText = "";
             ParolTextBox.SelectedText = "";
             ParolTextBox.ShadowDecoration.CustomizableEdges = customizableEdges10;
             ParolTextBox.Size = new Size(340, 40);
             ParolTextBox.TabIndex = 10;
+            ParolTextBox.UseSystemPasswordChar = true;
             // 
             // guna2HtmlLabel7
             // 
@@ -328,12 +322,40 @@
             LoginBtn.TabIndex = 15;
             LoginBtn.Text = "Login";
             // 
+            // telBox
+            // 
+            telBox.Anchor = AnchorStyles.None;
+            telBox.BorderRadius = 5;
+            telBox.BorderThickness = 0;
+            telBox.CustomizableEdges = customizableEdges15;
+            telBox.DefaultText = "+998";
+            telBox.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            telBox.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            telBox.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            telBox.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            telBox.FillColor = Color.FromArgb(243, 244, 246);
+            telBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            telBox.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            telBox.ForeColor = Color.FromArgb(102, 102, 102);
+            telBox.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            telBox.Location = new Point(178, 225);
+            telBox.Margin = new Padding(5);
+            telBox.Name = "telBox";
+            telBox.PasswordChar = '\0';
+            telBox.PlaceholderText = "";
+            telBox.SelectedText = "";
+            telBox.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            telBox.Size = new Size(340, 40);
+            telBox.TabIndex = 16;
+            telBox.TextChanged += telBox_TextChanged;
+            // 
             // Register
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(584, 517);
+            Controls.Add(telBox);
             Controls.Add(LoginBtn);
             Controls.Add(guna2HtmlLabel8);
             Controls.Add(SaqlashBtn);
@@ -341,7 +363,6 @@
             Controls.Add(guna2HtmlLabel6);
             Controls.Add(ParolTextBox);
             Controls.Add(guna2HtmlLabel7);
-            Controls.Add(tellBox);
             Controls.Add(guna2HtmlLabel5);
             Controls.Add(LovozimBox);
             Controls.Add(guna2HtmlLabel4);
@@ -376,5 +397,6 @@
         private Guna.UI2.WinForms.Guna2Button SaqlashBtn;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel8;
         private Guna.UI2.WinForms.Guna2Button LoginBtn;
+        private Guna.UI2.WinForms.Guna2TextBox telBox;
     }
 }
