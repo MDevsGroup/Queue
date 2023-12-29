@@ -16,5 +16,22 @@ namespace Desktop.Auth
         {
             InitializeComponent();
         }
+
+        private void SaqlashBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Login login = new Login();
+            login.Show();
+        }
+
+  
+
+        private void RegisterLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Hide();
+            Register register = new Register();
+            register.Show();
+
+        }
     }
 }

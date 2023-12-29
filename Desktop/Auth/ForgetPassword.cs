@@ -1,20 +1,39 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿
+using Messager.EskizUz;
 
-namespace Desktop.Auth
+namespace Desktop.Auth;
+
+public partial class ForgetPassword : Form
 {
-    public partial class ForgetPassword : Form
+    public ForgetPassword()
     {
-        public ForgetPassword()
+        InitializeComponent();
+    }
+
+
+
+
+    private async void KodniOlishBtn_Click(object sender, EventArgs e)
+    {
+        Close();
+        OTP otpForm = new OTP();
+        otpForm.Show();
+    }
+
+    private void telBox_KeyPress(object sender, KeyPressEventArgs e)
+    {
+        if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
         {
-            InitializeComponent();
+            e.Handled = true;
         }
+        else if (Char.IsDigit(e.KeyChar) && telBox.Text.Length > 13)
+        {
+            e.Handled = true;
+        }
+    }
+
+    private void guna2HtmlLabel2_Click(object sender, EventArgs e)
+    {
+
     }
 }

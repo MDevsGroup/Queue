@@ -98,7 +98,9 @@ public partial class Register : Form
 
     private void SaqlashBtn_Click(object sender, EventArgs e)
     {
-
+        this.Hide();
+        Login login = new();
+        login.Show();
     }
 
 }

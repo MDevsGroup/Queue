@@ -16,5 +16,17 @@ namespace Desktop.Auth
         {
             InitializeComponent();
         }
+
+        private void TasdiqlashBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ResetPassword resetPassword = new ResetPassword();
+            resetPassword.Show();
+        }
+
+        private void YuborishLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
     }
 }

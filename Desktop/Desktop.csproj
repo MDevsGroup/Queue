@@ -12,6 +12,7 @@
   <ItemGroup>
     <PackageReference Include="Guna.Charts.WinForms" Version="1.0.9" />
     <PackageReference Include="Guna.UI2.WinForms" Version="2.0.4.6" />
+    <PackageReference Include="Messager.EskizUz" Version="2.0.0" />
     <PackageReference Include="NuGet.Frameworks" Version="6.8.0" />
   </ItemGroup>
 
