@@ -1,13 +1,18 @@
 ﻿
+using BusinessLogicLayer.Interfaces;
 using Messager.EskizUz;
+using Toastr.Winforms;
 
 namespace Desktop.Auth;
 
 public partial class ForgetPassword : Form
 {
-    public ForgetPassword()
+    private readonly IUserInterface _userInterface;
+
+    public ForgetPassword(IUserInterface userInterface)
     {
         InitializeComponent();
+        _userInterface = userInterface;
     }
 
 
@@ -15,9 +20,21 @@ public partial class ForgetPassword : Form
 
     private async void KodniOlishBtn_Click(object sender, EventArgs e)
     {
-        Close();
-        OTP otpForm = new OTP();
-        otpForm.Show();
+        var phoneNumber = telBox.Text;
+        var messager = new MessagerAgent("mirabbosegamberdiyev7@gmail.com", "bYD5qpHPCDroxznocwGj4T2nKb3InuZ1pBNlrh8d");
+        var natija = await messager.SendOtpAsync(phoneNumber);
+        if(natija.Success)
+        {
+            Close();
+            OTP otpForm = new OTP(_userInterface);
+            otpForm.Show();
+        }
+        else
+        {
+            var toast = new Toast(ToastrPosition.TopCenter, duration: 3000, enableSoundEffect: true);
+            toast.ShowWarning("Telfon raqamga SMS yuborishda hatolik yuz berdi");
+        }
+
     }
 
     private void telBox_KeyPress(object sender, KeyPressEventArgs e)

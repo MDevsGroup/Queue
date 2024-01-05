@@ -44,6 +44,8 @@
             SMSLabel = new LinkLabel();
             guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             KirishBtn = new Guna.UI2.WinForms.Guna2Button();
+            Eslabqolish = new Guna.UI2.WinForms.Guna2CheckBox();
+            checkbox = new Guna.UI2.WinForms.Guna2CheckBox();
             SuspendLayout();
             // 
             // telBox
@@ -72,7 +74,6 @@
             telBox.ShadowDecoration.CustomizableEdges = customizableEdges2;
             telBox.Size = new Size(340, 40);
             telBox.TabIndex = 20;
-            telBox.TextChanged += telBox_TextChanged;
             telBox.KeyPress += telBox_KeyPress;
             // 
             // ParolTextBox
@@ -111,9 +112,9 @@
             guna2HtmlLabel7.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
             guna2HtmlLabel7.Location = new Point(70, 149);
             guna2HtmlLabel7.Name = "guna2HtmlLabel7";
-            guna2HtmlLabel7.Size = new Size(48, 27);
+            guna2HtmlLabel7.Size = new Size(94, 27);
             guna2HtmlLabel7.TabIndex = 18;
-            guna2HtmlLabel7.Text = "Parol";
+            guna2HtmlLabel7.Text = "Parolingiz:";
             // 
             // guna2HtmlLabel5
             // 
@@ -122,9 +123,9 @@
             guna2HtmlLabel5.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
             guna2HtmlLabel5.Location = new Point(70, 60);
             guna2HtmlLabel5.Name = "guna2HtmlLabel5";
-            guna2HtmlLabel5.Size = new Size(129, 27);
+            guna2HtmlLabel5.Size = new Size(175, 27);
             guna2HtmlLabel5.TabIndex = 17;
-            guna2HtmlLabel5.Text = "Telefon raqam";
+            guna2HtmlLabel5.Text = "Telefon raqamingiz:";
             // 
             // guna2HtmlLabel1
             // 
@@ -144,7 +145,7 @@
             RegisterLink.AutoSize = true;
             RegisterLink.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             RegisterLink.LinkColor = Color.Navy;
-            RegisterLink.Location = new Point(230, 328);
+            RegisterLink.Location = new Point(230, 333);
             RegisterLink.Name = "RegisterLink";
             RegisterLink.Size = new Size(75, 21);
             RegisterLink.TabIndex = 23;
@@ -208,11 +209,53 @@
             KirishBtn.Text = "Kirish";
             KirishBtn.Click += KirishBtn_Click;
             // 
+            // Eslabqolish
+            // 
+            Eslabqolish.Anchor = AnchorStyles.None;
+            Eslabqolish.AutoSize = true;
+            Eslabqolish.CheckedState.BorderColor = Color.FromArgb(94, 148, 255);
+            Eslabqolish.CheckedState.BorderRadius = 0;
+            Eslabqolish.CheckedState.BorderThickness = 0;
+            Eslabqolish.CheckedState.FillColor = Color.FromArgb(94, 148, 255);
+            Eslabqolish.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Eslabqolish.Location = new Point(70, 233);
+            Eslabqolish.Name = "Eslabqolish";
+            Eslabqolish.Size = new Size(114, 25);
+            Eslabqolish.TabIndex = 27;
+            Eslabqolish.Text = "Eslab qolish";
+            Eslabqolish.UncheckedState.BorderColor = Color.FromArgb(125, 137, 149);
+            Eslabqolish.UncheckedState.BorderRadius = 0;
+            Eslabqolish.UncheckedState.BorderThickness = 0;
+            Eslabqolish.UncheckedState.FillColor = Color.FromArgb(125, 137, 149);
+            // 
+            // checkbox
+            // 
+            checkbox.Anchor = AnchorStyles.None;
+            checkbox.AutoSize = true;
+            checkbox.CheckedState.BorderColor = Color.FromArgb(94, 148, 255);
+            checkbox.CheckedState.BorderRadius = 0;
+            checkbox.CheckedState.BorderThickness = 0;
+            checkbox.CheckedState.FillColor = Color.FromArgb(94, 148, 255);
+            checkbox.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            checkbox.ImageAlign = ContentAlignment.MiddleRight;
+            checkbox.Location = new Point(259, 232);
+            checkbox.Name = "checkbox";
+            checkbox.Size = new Size(151, 25);
+            checkbox.TabIndex = 28;
+            checkbox.Text = "Parolni ko'rsatish";
+            checkbox.UncheckedState.BorderColor = Color.FromArgb(125, 137, 149);
+            checkbox.UncheckedState.BorderRadius = 0;
+            checkbox.UncheckedState.BorderThickness = 0;
+            checkbox.UncheckedState.FillColor = Color.FromArgb(125, 137, 149);
+            checkbox.CheckedChanged += checkbox_CheckedChanged;
+            // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(473, 411);
+            Controls.Add(checkbox);
+            Controls.Add(Eslabqolish);
             Controls.Add(KirishBtn);
             Controls.Add(SMSLabel);
             Controls.Add(guna2HtmlLabel2);
@@ -227,7 +270,6 @@
             Name = "Login";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
-            Load += Login_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -244,5 +286,7 @@
         private LinkLabel SMSLabel;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private Guna.UI2.WinForms.Guna2Button KirishBtn;
+        private Guna.UI2.WinForms.Guna2CheckBox Eslabqolish;
+        private Guna.UI2.WinForms.Guna2CheckBox checkbox;
     }
 }

@@ -103,6 +103,7 @@
             ParolTextBox.Size = new Size(340, 40);
             ParolTextBox.TabIndex = 28;
             ParolTextBox.UseSystemPasswordChar = true;
+            ParolTextBox.TextChanged += ParolTextBox_TextChanged;
             // 
             // guna2HtmlLabel7
             // 
@@ -142,6 +143,7 @@
             ParolniTiklashTextBox.Size = new Size(340, 40);
             ParolniTiklashTextBox.TabIndex = 32;
             ParolniTiklashTextBox.UseSystemPasswordChar = true;
+            ParolniTiklashTextBox.TextChanged += ParolniTiklashTextBox_TextChanged;
             // 
             // guna2HtmlLabel2
             // 

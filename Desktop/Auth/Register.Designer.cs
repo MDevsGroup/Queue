@@ -58,6 +58,7 @@
             guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             telBox = new Guna.UI2.WinForms.Guna2TextBox();
             LoginLink = new LinkLabel();
+            checkbox = new Guna.UI2.WinForms.Guna2CheckBox();
             SuspendLayout();
             // 
             // guna2HtmlLabel1
@@ -176,6 +177,7 @@
             LovozimBox.Size = new Size(340, 34);
             LovozimBox.TabIndex = 6;
             LovozimBox.TextChanged += LovozimBox_TextChanged;
+            LovozimBox.KeyPress += LovozimBox_KeyPress;
             // 
             // guna2HtmlLabel4
             // 
@@ -226,6 +228,7 @@
             ParolniTastiqlashBox.TabIndex = 12;
             ParolniTastiqlashBox.UseSystemPasswordChar = true;
             ParolniTastiqlashBox.TextChanged += ParolniTastiqlashBox_TextChanged;
+            ParolniTastiqlashBox.KeyPress += ParolniTastiqlashBox_KeyPress;
             // 
             // guna2HtmlLabel6
             // 
@@ -265,6 +268,7 @@
             ParolTextBox.TabIndex = 10;
             ParolTextBox.UseSystemPasswordChar = true;
             ParolTextBox.TextChanged += ParolTextBox_TextChanged;
+            ParolTextBox.KeyPress += ParolTextBox_KeyPress;
             // 
             // guna2HtmlLabel7
             // 
@@ -302,7 +306,7 @@
             guna2HtmlLabel8.Anchor = AnchorStyles.None;
             guna2HtmlLabel8.BackColor = Color.Transparent;
             guna2HtmlLabel8.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            guna2HtmlLabel8.Location = new Point(141, 473);
+            guna2HtmlLabel8.Location = new Point(64, 473);
             guna2HtmlLabel8.Name = "guna2HtmlLabel8";
             guna2HtmlLabel8.Size = new Size(159, 23);
             guna2HtmlLabel8.TabIndex = 14;
@@ -343,7 +347,7 @@
             LoginLink.AutoSize = true;
             LoginLink.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             LoginLink.LinkColor = Color.Navy;
-            LoginLink.Location = new Point(322, 475);
+            LoginLink.Location = new Point(245, 475);
             LoginLink.Name = "LoginLink";
             LoginLink.Size = new Size(51, 21);
             LoginLink.TabIndex = 17;
@@ -351,12 +355,34 @@
             LoginLink.Text = "Login";
             LoginLink.LinkClicked += LoginLink_LinkClicked;
             // 
+            // checkbox
+            // 
+            checkbox.Anchor = AnchorStyles.None;
+            checkbox.AutoSize = true;
+            checkbox.CheckedState.BorderColor = Color.FromArgb(94, 148, 255);
+            checkbox.CheckedState.BorderRadius = 0;
+            checkbox.CheckedState.BorderThickness = 0;
+            checkbox.CheckedState.FillColor = Color.FromArgb(94, 148, 255);
+            checkbox.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            checkbox.ImageAlign = ContentAlignment.MiddleRight;
+            checkbox.Location = new Point(343, 471);
+            checkbox.Name = "checkbox";
+            checkbox.Size = new Size(151, 25);
+            checkbox.TabIndex = 29;
+            checkbox.Text = "Parolni ko'rsatish";
+            checkbox.UncheckedState.BorderColor = Color.FromArgb(125, 137, 149);
+            checkbox.UncheckedState.BorderRadius = 0;
+            checkbox.UncheckedState.BorderThickness = 0;
+            checkbox.UncheckedState.FillColor = Color.FromArgb(125, 137, 149);
+            checkbox.CheckedChanged += checkbox_CheckedChanged;
+            // 
             // Register
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(584, 517);
+            Controls.Add(checkbox);
             Controls.Add(LoginLink);
             Controls.Add(telBox);
             Controls.Add(guna2HtmlLabel8);
@@ -400,5 +426,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel8;
         private Guna.UI2.WinForms.Guna2TextBox telBox;
         private LinkLabel LoginLink;
+        private Guna.UI2.WinForms.Guna2CheckBox checkbox;
     }
 }

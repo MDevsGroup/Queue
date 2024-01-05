@@ -1,32 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using BusinessLogicLayer.Interfaces;
+using Messager.EskizUz;
+namespace Desktop.Auth;
 
-namespace Desktop.Auth
+public partial class OTP : Form
 {
-    public partial class OTP : Form
+    private readonly IUserInterface _userInterface;
+    
+    public OTP(IUserInterface userInterface)
     {
-        public OTP()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
+        _userInterface = userInterface;
+    }
 
-        private void TasdiqlashBtn_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            ResetPassword resetPassword = new ResetPassword();
-            resetPassword.Show();
-        }
+    private void TasdiqlashBtn_Click(object sender, EventArgs e)
+    {
 
-        private void YuborishLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
+        this.Hide();
+        ResetPassword resetPassword = new ResetPassword(_userInterface);
+        resetPassword.Show();
+    }
 
-        }
+    private void YuborishLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    {
+
     }
 }
