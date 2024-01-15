@@ -8,13 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Desktop.Hodimlar
+namespace Desktop.Hodimlar.MacBookProForms
 {
-    public partial class MacBookPro : Form
+    public partial class ControlWaiting : UserControl
     {
-        public MacBookPro()
+        public ControlWaiting()
         {
             InitializeComponent();
         }
+
     }
 }
