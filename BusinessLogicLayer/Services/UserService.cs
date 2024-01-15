@@ -4,6 +4,7 @@ using BusinessLogicLayer.Interfaces;
 using BusinessLogicLayer.UserDtos;
 using DataAccessLayer.Data;
 using DataAccessLayer.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace BusinessLogicLayer.Services;
 
@@ -32,14 +33,24 @@ public class UserService(AppDbContext dbContext) : IUserInterface
 
     }
 
-    public async Task Registiration(RegisterDto registerDto)
+    public async Task<bool> Registiration(RegisterDto registerDto)
     {
         if (registerDto is null)
         {
             throw new ArgumentNullException("Iltimos hamma malumotlarni to'ldiring");
         }
 
-        await _dbContext.Users.AddAsync((User)registerDto);
-        await _dbContext.SaveChangesAsync();
+        var users = await _dbContext.Users.ToListAsync();
+
+        if (!users.Any(i => i.PhoneNumber == registerDto.PhoneNumber))
+        {
+            await _dbContext.Users.AddAsync((User)registerDto);
+            await _dbContext.SaveChangesAsync();
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }

@@ -129,18 +129,26 @@ public partial class Register : Form
         {
             try
             {
-
-                var messager = new MessagerAgent("mirabbosegamberdiyev7@gmail.com", "bYD5qpHPCDroxznocwGj4T2nKb3InuZ1pBNlrh8d");
-                var natija = await messager.SendOtpAsync(phoneNumber);
-                var code = natija.Code;
-
-                if (natija.Success)
+                var check = await _userInterface.Registiration(registerDto);
+                if (check)
                 {
-                    await _userInterface.Registiration(registerDto);
+                    var messager = new MessagerAgent("mirabbosegamberdiyev7@gmail.com", "bYD5qpHPCDroxznocwGj4T2nKb3InuZ1pBNlrh8d");
+                    var natija = await messager.SendOtpAsync(phoneNumber);
+                    var code = natija.Code;
+                    if (natija.Success)
+                    {
+                        OTPForRegister oTPForRegister = new OTPForRegister(_userInterface);
+                        this.Hide();
+                        oTPForRegister.Show();
+                    }
+                    else
+                    {
+                        new Toast().ShowWarning("Telfon raqamga SMS yuborishda hatolik yuz berdi");
+                    }
                 }
                 else
                 {
-                    new Toast().ShowWarning("Telfon raqamga SMS yuborishda hatolik yuz berdi");
+                    new Toast().ShowWarning("Telefon raqam oldin ro'yhatdan o'tgan!");
                 }
             }
             catch (Exception ex)
@@ -148,12 +156,6 @@ public partial class Register : Form
                 new Toast().ShowError("Qo'shishda xatolik yuz berdi: " + ex.Message);
             }
         });
-
-        OTPForRegister oTPForRegister = new OTPForRegister(_userInterface);
-        this.Hide();
-
-        oTPForRegister.Show();
-
     }
 
     private void checkbox_CheckedChanged(object sender, EventArgs e)
