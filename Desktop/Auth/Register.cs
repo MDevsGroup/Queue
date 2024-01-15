@@ -125,20 +125,19 @@ public partial class Register : Form
         };
         var phoneNumber = telBox.Text;
 
-        await Task.Run(async () =>
+        try
         {
-            var toast = new Toast(ToastrPosition.TopCenter, duration: 3000, enableSoundEffect: true);
-            try
+            var check = await _userInterface.Registiration(registerDto);
+            if (check)
             {
-                var check = await _userInterface.Registiration(registerDto);
-                if (check)
+                await Task.Run(async () =>
                 {
                     var messager = new MessagerAgent("mirabbosegamberdiyev7@gmail.com", "bYD5qpHPCDroxznocwGj4T2nKb3InuZ1pBNlrh8d");
                     var natija = await messager.SendOtpAsync(phoneNumber);
                     var code = natija.Code;
                     if (natija.Success)
                     {
-                        OTPForRegister oTPForRegister = new OTPForRegister(_userInterface);
+                        OTPForRegister oTPForRegister = new OTPForRegister(_userInterface, code);
                         this.Hide();
                         oTPForRegister.Show();
                     }
@@ -146,17 +145,23 @@ public partial class Register : Form
                     {
                         toast.ShowWarning("Telfon raqamga SMS yuborishda hatolik yuz berdi");
                     }
-                }
-                else
-                {
-                    toast.ShowWarning("Telefon raqam oldin ro'yhatdan o'tgan!");
-                }
+                });
             }
-            catch (Exception ex)
+            else
             {
-                toast.ShowError("Qo'shishda xatolik yuz berdi: " + ex.Message);
+                ForToastr();
             }
-        });
+        }
+        catch (Exception ex)
+        {
+            toast.ShowError("Qo'shishda xatolik yuz berdi: " + ex.Message);
+        }
+    }
+
+    private void ForToastr()
+    {
+        var toast = new Toast(ToastrPosition.TopCenter, duration: 3000, enableSoundEffect: true);
+        toast.ShowWarning("Telefon raqam oldin ro'yhatdan o'tgan!");
     }
 
     private void checkbox_CheckedChanged(object sender, EventArgs e)
