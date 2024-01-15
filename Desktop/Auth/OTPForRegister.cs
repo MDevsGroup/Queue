@@ -38,9 +38,6 @@ namespace Desktop.Auth
             {
                 this.Hide();
                 Login login = new Login(_userInterface);
-                Register register = new Register(_userInterface);
-                register.Saved(registerDto);
-
                 login.Show();
             }
             else

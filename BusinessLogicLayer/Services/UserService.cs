@@ -35,7 +35,7 @@ public class UserService(AppDbContext dbContext) : IUserInterface
 
     }
 
-    public async Task Registration(RegisterDto registerDto)
+    public async Task<bool> Registration(RegisterDto registerDto)
     {
         if (registerDto is null)
         {
@@ -48,10 +48,11 @@ public class UserService(AppDbContext dbContext) : IUserInterface
         {
             await _dbContext.Users.AddAsync((User)registerDto);
             await _dbContext.SaveChangesAsync();
-
+            return true;
         }
-     
+        else
+        {
+            return false;
+        }
     }
-
-
 }

@@ -133,28 +133,38 @@ public partial class Register : Form
 
             await Task.Run(async () =>
             {
-                var messager = new MessagerAgent("mirabbosegamberdiyev7@gmail.com", "bYD5qpHPCDroxznocwGj4T2nKb3InuZ1pBNlrh8d");
-                var natija = await messager.SendOtpAsync(phoneNumber);
-                var code = natija.Code;
-                if (natija.Success)
+                var result = await _userInterface.Registration(registerDto);
+                if (result)
                 {
-                    this.Invoke((MethodInvoker)delegate
+                    var messager = new MessagerAgent("mirabbosegamberdiyev7@gmail.com", "bYD5qpHPCDroxznocwGj4T2nKb3InuZ1pBNlrh8d");
+                    var natija = await messager.SendOtpAsync(phoneNumber);
+                    var code = natija.Code;
+                    if (natija.Success)
                     {
-                        OTPForRegister oTPForRegister = new OTPForRegister(_userInterface, code);
-                        this.Hide();
-                        oTPForRegister.Show();
-                    });
+                        this.Invoke((MethodInvoker)delegate
+                        {
+                            OTPForRegister oTPForRegister = new OTPForRegister(_userInterface, code);
+                            this.Hide();
+                            oTPForRegister.Show();
+                        });
+                    }
+                    else
+                    {
+                        this.Invoke((MethodInvoker)delegate
+                        {
+                            toast.ShowWarning("Telfon raqamga SMS yuborishda hatolik yuz berdi");
+                        });
+                    }
                 }
                 else
                 {
                     this.Invoke((MethodInvoker)delegate
                     {
-                        toast.ShowWarning("Telfon raqamga SMS yuborishda hatolik yuz berdi");
+                        toast.ShowError("Telefon raqam oldin ro'yxatdan o'tgan!");
                     });
+
                 }
             });
-
-
         }
         catch (Exception ex)
         {
@@ -164,28 +174,6 @@ public partial class Register : Form
             });
         }
     }
-
-    public async void Saved(RegisterDto registerDto)
-    {
-        var toast = new Toast(ToastrPosition.TopCenter, duration: 3000, enableSoundEffect: true);
-
-        try
-        {
-            await _userInterface.Registration(registerDto);
-        }
-        catch (Exception ex)
-        {
-
-            this.Invoke((MethodInvoker)delegate
-            {
-                toast.ShowWarning("Telefon raqam oldin ro'yhatdan o'tgan!");
-            });
-   
-        };
-    }
-
-
-
     private void checkbox_CheckedChanged(object sender, EventArgs e)
     {
         if (checkbox.Checked)
