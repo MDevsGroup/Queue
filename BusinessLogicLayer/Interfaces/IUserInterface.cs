@@ -6,7 +6,8 @@ namespace BusinessLogicLayer.Interfaces;
 
 public interface IUserInterface
 {
-    Task<bool> Registration(RegisterDto registerDto);
+    void Registration(RegisterDto registerDto);
+    Task<bool> RegistrationCheck(RegisterDto registerDto);
     Task Login(LoginDto loginDto);
     Task ForgetPasswor(ForgetDto forgetDto);
 }

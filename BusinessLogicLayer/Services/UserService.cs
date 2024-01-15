@@ -35,7 +35,7 @@ public class UserService(AppDbContext dbContext) : IUserInterface
 
     }
 
-    public async Task<bool> Registration(RegisterDto registerDto)
+    public async void Registration(RegisterDto registerDto)
     {
         if (registerDto is null)
         {
@@ -48,6 +48,20 @@ public class UserService(AppDbContext dbContext) : IUserInterface
         {
             await _dbContext.Users.AddAsync((User)registerDto);
             await _dbContext.SaveChangesAsync();
+        }
+    }
+
+    public async Task<bool> RegistrationCheck(RegisterDto registerDto)
+    {
+        if (registerDto is null)
+        {
+            throw new ArgumentNullException("Iltimos hamma malumotlarni to'ldiring");
+        }
+
+        var users = await _dbContext.Users.ToListAsync();
+
+        if (!users.Any(i => i.PhoneNumber == registerDto.PhoneNumber))
+        {
             return true;
         }
         else
