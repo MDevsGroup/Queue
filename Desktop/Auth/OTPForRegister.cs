@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 using Toastr.Winforms;
 
 namespace Desktop.Auth
-{
+{ 
     public partial class OTPForRegister : Form
     {
         private readonly IUserInterface _userInterface;
