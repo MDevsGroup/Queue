@@ -14,7 +14,6 @@ public partial class OTP : Form
 
     private void TasdiqlashBtn_Click(object sender, EventArgs e)
     {
-
         this.Hide();
         ResetPassword resetPassword = new ResetPassword(_userInterface);
         resetPassword.Show();

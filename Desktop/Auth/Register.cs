@@ -103,7 +103,7 @@ public partial class Register : Form
         login.Show();
     }
 
-    private async void SaqlashBtn_Click(object sender, EventArgs e)
+    public async void SaqlashBtn_Click(object sender, EventArgs e)
     {
         var toast = new Toast(ToastrPosition.TopCenter, duration: 3000, enableSoundEffect: true);
 
@@ -120,32 +120,40 @@ public partial class Register : Form
             Lavozimi = LovozimBox.Text,
             PhoneNumber = telBox.Text,
             Parol = ParolTextBox.Text,
-            TasqidParol = ParolniTastiqlashBox.Text
+            TasqidParol = ParolniTastiqlashBox.Text,
+            State = 0
         };
+        var phoneNumber = telBox.Text;
 
-        try
+        await Task.Run(async () =>
         {
+            try
+            {
 
-            var phoneNumber = telBox.Text;
-            var messager = new MessagerAgent("mirabbosegamberdiyev7@gmail.com", "bYD5qpHPCDroxznocwGj4T2nKb3InuZ1pBNlrh8d");
-            var natija = await messager.SendOtpAsync(phoneNumber);
-            
-            if (natija.Success)
-            {
-                await _userInterface.Registiration(registerDto);
-                OTP otp = new OTP(_userInterface);
-                this.Hide();
-                otp.Show();
+                var messager = new MessagerAgent("mirabbosegamberdiyev7@gmail.com", "bYD5qpHPCDroxznocwGj4T2nKb3InuZ1pBNlrh8d");
+                var natija = await messager.SendOtpAsync(phoneNumber);
+                var code = natija.Code;
+
+                if (natija.Success)
+                {
+                    await _userInterface.Registiration(registerDto);
+                }
+                else
+                {
+                    new Toast().ShowWarning("Telfon raqamga SMS yuborishda hatolik yuz berdi");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                toast.ShowWarning("Telfon raqamga SMS yuborishda hatolik yuz berdi");
+                new Toast().ShowError("Qo'shishda xatolik yuz berdi: " + ex.Message);
             }
-        }
-        catch (Exception ex)
-        {
-            toast.ShowError("Qo'shishda xatolik yuz berdi: " + ex.Message);
-        }
+        });
+
+        OTPForRegister oTPForRegister = new OTPForRegister(_userInterface);
+        this.Hide();
+
+        oTPForRegister.Show();
+
     }
 
     private void checkbox_CheckedChanged(object sender, EventArgs e)

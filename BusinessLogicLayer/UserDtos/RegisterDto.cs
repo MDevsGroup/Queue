@@ -1,5 +1,5 @@
-﻿using DataAccessLayer.Models;
-
+﻿using BusinessLogicLayer.Enums;
+using DataAccessLayer.Models;
 namespace BusinessLogicLayer.UserDtos;
 
 public class RegisterDto
@@ -10,6 +10,7 @@ public class RegisterDto
     public string PhoneNumber { get; set; } = string.Empty;
     public string Parol { get; set; } = string.Empty;
     public string TasqidParol { get; set; } = string.Empty;
+    public State State { get; set; }
 
     public static implicit operator User(RegisterDto dto)
     {
