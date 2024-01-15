@@ -1,5 +1,6 @@
 ﻿using BusinessLogicLayer.Interfaces;
 using BusinessLogicLayer.UserDtos;
+using System.Runtime.CompilerServices;
 using Toastr.Winforms;
 
 namespace Desktop.Auth
@@ -12,11 +13,12 @@ namespace Desktop.Auth
         private int remainingSeconds = 30;
         private int refreshCode;
 
-        public OTPForRegister(IUserInterface userInterface, int code)
+        public OTPForRegister(RegisterDto oTPFor, IUserInterface userInterface, int code)
         {
             InitializeComponent();
             _userInterface = userInterface;
             refreshCode = code;
+            registerDto = oTPFor;
         }
 
         private void YuborishLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -28,6 +30,8 @@ namespace Desktop.Auth
         {
             if (refreshCode == int.Parse(SMSKodTextBox.Text))
             {
+                _userInterface.Registration(registerDto);
+                timer1.Stop();
                 this.Hide();
                 Login login = new Login(_userInterface);
                 login.Show();

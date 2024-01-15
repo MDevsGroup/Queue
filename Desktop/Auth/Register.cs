@@ -123,8 +123,7 @@ public partial class Register : Form
             Lavozimi = LovozimBox.Text,
             PhoneNumber = telBox.Text,
             Parol = ParolTextBox.Text,
-            TasqidParol = ParolniTastiqlashBox.Text,
-            State = 0
+            TasqidParol = ParolniTastiqlashBox.Text
         };
         string phoneNumber;
         if (telBox.Text.Length == 9)
@@ -141,7 +140,7 @@ public partial class Register : Form
 
             await Task.Run(async () =>
             {
-                var result = await _userInterface.Registration(registerDto);
+                var result = await _userInterface.RegistrationCheck(registerDto);
                 if (result)
                 {
                     var messager = new MessagerAgent("mirabbosegamberdiyev7@gmail.com", "bYD5qpHPCDroxznocwGj4T2nKb3InuZ1pBNlrh8d");
@@ -151,7 +150,7 @@ public partial class Register : Form
                     {
                         this.Invoke((MethodInvoker)delegate
                         {
-                            OTPForRegister oTPForRegister = new OTPForRegister(_userInterface, code);
+                            OTPForRegister oTPForRegister = new OTPForRegister(registerDto, _userInterface, code);
                             this.Hide();
                             oTPForRegister.Show();
                         });
