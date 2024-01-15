@@ -1,5 +1,6 @@
 ﻿using BusinessLogicLayer.Enums;
 using DataAccessLayer.Models;
+
 namespace BusinessLogicLayer.UserDtos;
 
 public class RegisterDto
@@ -24,5 +25,7 @@ public class RegisterDto
             TasqidParol = dto.TasqidParol
         };
     }
+
+
 }
 

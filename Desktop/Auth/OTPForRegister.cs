@@ -1,4 +1,5 @@
 ﻿using BusinessLogicLayer.Interfaces;
+using BusinessLogicLayer.UserDtos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,6 +18,8 @@ namespace Desktop.Auth
         private readonly IUserInterface _userInterface;
         private readonly int code;
         Toast toast = new Toast(ToastrPosition.TopCenter, duration: 3000, enableSoundEffect: true);
+        private RegisterDto registerDto;
+
         public OTPForRegister(IUserInterface userInterface, int code)
         {
             InitializeComponent();
@@ -35,6 +38,9 @@ namespace Desktop.Auth
             {
                 this.Hide();
                 Login login = new Login(_userInterface);
+                Register register = new Register(_userInterface);
+                register.Saved(registerDto);
+
                 login.Show();
             }
             else

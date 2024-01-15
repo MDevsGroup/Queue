@@ -3,12 +3,15 @@ using BusinessLogicLayer.Interfaces;
 using BusinessLogicLayer.UserDtos;
 using Toastr.Winforms;
 using Messager.EskizUz;
+using System.Linq.Expressions;
+using System.Threading.Tasks;
 
 namespace Desktop.Auth;
 
 public partial class Register : Form
 {
     private readonly IUserInterface _userInterface;
+
     public Register(IUserInterface userInterface)
     {
         InitializeComponent();
@@ -127,42 +130,61 @@ public partial class Register : Form
 
         try
         {
-            var check = await _userInterface.Registiration(registerDto);
-            if (check)
+
+            await Task.Run(async () =>
             {
-                await Task.Run(async () =>
+                var messager = new MessagerAgent("mirabbosegamberdiyev7@gmail.com", "bYD5qpHPCDroxznocwGj4T2nKb3InuZ1pBNlrh8d");
+                var natija = await messager.SendOtpAsync(phoneNumber);
+                var code = natija.Code;
+                if (natija.Success)
                 {
-                    var messager = new MessagerAgent("mirabbosegamberdiyev7@gmail.com", "bYD5qpHPCDroxznocwGj4T2nKb3InuZ1pBNlrh8d");
-                    var natija = await messager.SendOtpAsync(phoneNumber);
-                    var code = natija.Code;
-                    if (natija.Success)
+                    this.Invoke((MethodInvoker)delegate
                     {
                         OTPForRegister oTPForRegister = new OTPForRegister(_userInterface, code);
                         this.Hide();
                         oTPForRegister.Show();
-                    }
-                    else
+                    });
+                }
+                else
+                {
+                    this.Invoke((MethodInvoker)delegate
                     {
                         toast.ShowWarning("Telfon raqamga SMS yuborishda hatolik yuz berdi");
-                    }
-                });
-            }
-            else
-            {
-                ForToastr();
-            }
+                    });
+                }
+            });
+
+
         }
         catch (Exception ex)
         {
-            toast.ShowError("Qo'shishda xatolik yuz berdi: " + ex.Message);
+            this.Invoke((MethodInvoker)delegate
+            {
+                toast.ShowError("Qo'shishda xatolik yuz berdi: " + ex.Message);
+            });
         }
     }
 
-    private void ForToastr()
+    public async void Saved(RegisterDto registerDto)
     {
         var toast = new Toast(ToastrPosition.TopCenter, duration: 3000, enableSoundEffect: true);
-        toast.ShowWarning("Telefon raqam oldin ro'yhatdan o'tgan!");
+
+        try
+        {
+            await _userInterface.Registration(registerDto);
+        }
+        catch (Exception ex)
+        {
+
+            this.Invoke((MethodInvoker)delegate
+            {
+                toast.ShowWarning("Telefon raqam oldin ro'yhatdan o'tgan!");
+            });
+   
+        };
     }
+
+
 
     private void checkbox_CheckedChanged(object sender, EventArgs e)
     {
