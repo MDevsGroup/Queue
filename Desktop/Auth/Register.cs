@@ -126,8 +126,16 @@ public partial class Register : Form
             TasqidParol = ParolniTastiqlashBox.Text,
             State = 0
         };
-        var phoneNumber = telBox.Text;
-
+        string phoneNumber;
+        if (telBox.Text.Length == 9)
+        {
+            phoneNumber = "+998" + telBox.Text;
+        }
+        else
+        {
+            phoneNumber = telBox.Text;
+        }
+        registerDto.PhoneNumber = phoneNumber;
         try
         {
 
