@@ -127,6 +127,7 @@ public partial class Register : Form
 
         await Task.Run(async () =>
         {
+            var toast = new Toast(ToastrPosition.TopCenter, duration: 3000, enableSoundEffect: true);
             try
             {
                 var check = await _userInterface.Registiration(registerDto);
@@ -143,17 +144,17 @@ public partial class Register : Form
                     }
                     else
                     {
-                        new Toast().ShowWarning("Telfon raqamga SMS yuborishda hatolik yuz berdi");
+                        toast.ShowWarning("Telfon raqamga SMS yuborishda hatolik yuz berdi");
                     }
                 }
                 else
                 {
-                    new Toast().ShowWarning("Telefon raqam oldin ro'yhatdan o'tgan!");
+                    toast.ShowWarning("Telefon raqam oldin ro'yhatdan o'tgan!");
                 }
             }
             catch (Exception ex)
             {
-                new Toast().ShowError("Qo'shishda xatolik yuz berdi: " + ex.Message);
+                toast.ShowError("Qo'shishda xatolik yuz berdi: " + ex.Message);
             }
         });
     }

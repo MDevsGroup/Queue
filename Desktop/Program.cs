@@ -32,7 +32,7 @@ internal static class Program
     }
     private static void ConfigureServices(IServiceCollection services)
     {
-        const string connectionString = "Host=localhost;Port=5432;Database=Navbat;Username=postgres;Password=1234";
+        const string connectionString = "Host=192.168.35.187;Port=5432;Database=Navbat;Username=postgres;Password=1234";
 
         services.AddDbContext<AppDbContext>(options =>
             options.UseNpgsql(connectionString, o => o.EnableRetryOnFailure()), ServiceLifetime.Transient, ServiceLifetime.Transient);
