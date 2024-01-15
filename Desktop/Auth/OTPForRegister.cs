@@ -21,9 +21,19 @@ namespace Desktop.Auth
             registerDto = oTPFor;
         }
 
-        private void YuborishLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private async void YuborishLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            MessagerAgent messager = new MessagerAgent("mirabbosegamberdiyev7@gmail.com", "bYD5qpHPCDroxznocwGj4T2nKb3InuZ1pBNlrh8d");
+            var phoneNumber = registerDto.PhoneNumber;
+            await Task.Run(async () =>
+                {
+                    var messager = new MessagerAgent("mirabbosegamberdiyev7@gmail.com", "bYD5qpHPCDroxznocwGj4T2nKb3InuZ1pBNlrh8d");
+                    var natija = await messager.SendOtpAsync(phoneNumber);
+                });
+
+                timer1.Tick += timer1_Tick;
+                timer1.Interval = 1000;
+                timer1.Start();
+            
 
         }
 
