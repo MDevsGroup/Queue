@@ -48,10 +48,9 @@
             guna2HtmlLabel1.Anchor = AnchorStyles.None;
             guna2HtmlLabel1.BackColor = Color.Transparent;
             guna2HtmlLabel1.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            guna2HtmlLabel1.Location = new Point(119, 17);
-            guna2HtmlLabel1.Margin = new Padding(3, 4, 3, 4);
+            guna2HtmlLabel1.Location = new Point(104, 13);
             guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            guna2HtmlLabel1.Size = new Size(200, 38);
+            guna2HtmlLabel1.Size = new Size(161, 32);
             guna2HtmlLabel1.TabIndex = 1;
             guna2HtmlLabel1.Text = "Kodni tasdiqlash";
             guna2HtmlLabel1.TextAlignment = ContentAlignment.TopCenter;
@@ -61,10 +60,9 @@
             guna2HtmlLabel2.Anchor = AnchorStyles.None;
             guna2HtmlLabel2.BackColor = Color.Transparent;
             guna2HtmlLabel2.Font = new Font("Segoe UI Semibold", 13.75F, FontStyle.Bold);
-            guna2HtmlLabel2.Location = new Point(48, 68);
-            guna2HtmlLabel2.Margin = new Padding(3, 4, 3, 4);
+            guna2HtmlLabel2.Location = new Point(42, 51);
             guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            guna2HtmlLabel2.Size = new Size(195, 33);
+            guna2HtmlLabel2.Size = new Size(157, 27);
             guna2HtmlLabel2.TabIndex = 2;
             guna2HtmlLabel2.Text = "SMS kodni kiriting";
             guna2HtmlLabel2.TextAlignment = ContentAlignment.TopCenter;
@@ -85,14 +83,14 @@
             SMSKodTextBox.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             SMSKodTextBox.ForeColor = Color.FromArgb(102, 102, 102);
             SMSKodTextBox.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            SMSKodTextBox.Location = new Point(48, 117);
-            SMSKodTextBox.Margin = new Padding(6, 9, 6, 9);
+            SMSKodTextBox.Location = new Point(42, 88);
+            SMSKodTextBox.Margin = new Padding(5, 7, 5, 7);
             SMSKodTextBox.Name = "SMSKodTextBox";
             SMSKodTextBox.PasswordChar = '\0';
             SMSKodTextBox.PlaceholderText = "Tasdiqlash kodni kiriting";
             SMSKodTextBox.SelectedText = "";
             SMSKodTextBox.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            SMSKodTextBox.Size = new Size(327, 45);
+            SMSKodTextBox.Size = new Size(286, 34);
             SMSKodTextBox.TabIndex = 5;
             // 
             // TasdiqlashBtn
@@ -107,11 +105,10 @@
             TasdiqlashBtn.FillColor = Color.FromArgb(79, 70, 229);
             TasdiqlashBtn.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             TasdiqlashBtn.ForeColor = Color.White;
-            TasdiqlashBtn.Location = new Point(48, 195);
-            TasdiqlashBtn.Margin = new Padding(3, 4, 3, 4);
+            TasdiqlashBtn.Location = new Point(42, 146);
             TasdiqlashBtn.Name = "TasdiqlashBtn";
             TasdiqlashBtn.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            TasdiqlashBtn.Size = new Size(327, 48);
+            TasdiqlashBtn.Size = new Size(286, 36);
             TasdiqlashBtn.TabIndex = 14;
             TasdiqlashBtn.Text = "Tasdiqlash";
             TasdiqlashBtn.Click += TasdiqlashBtn_Click;
@@ -121,10 +118,9 @@
             guna2HtmlLabel3.Anchor = AnchorStyles.None;
             guna2HtmlLabel3.BackColor = Color.Transparent;
             guna2HtmlLabel3.Font = new Font("Segoe UI Semibold", 11.75F, FontStyle.Bold);
-            guna2HtmlLabel3.Location = new Point(34, 265);
-            guna2HtmlLabel3.Margin = new Padding(3, 4, 3, 4);
+            guna2HtmlLabel3.Location = new Point(30, 199);
             guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            guna2HtmlLabel3.Size = new Size(211, 30);
+            guna2HtmlLabel3.Size = new Size(168, 23);
             guna2HtmlLabel3.TabIndex = 15;
             guna2HtmlLabel3.Text = "Parolni qayta yuborish:";
             guna2HtmlLabel3.TextAlignment = ContentAlignment.TopCenter;
@@ -135,9 +131,9 @@
             YuborishLabel.AutoSize = true;
             YuborishLabel.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             YuborishLabel.LinkColor = Color.Navy;
-            YuborishLabel.Location = new Point(315, 267);
+            YuborishLabel.Location = new Point(276, 200);
             YuborishLabel.Name = "YuborishLabel";
-            YuborishLabel.Size = new Size(92, 28);
+            YuborishLabel.Size = new Size(73, 21);
             YuborishLabel.TabIndex = 19;
             YuborishLabel.TabStop = true;
             YuborishLabel.Text = "Yuborish";
@@ -146,19 +142,20 @@
             // 
             // label1
             // 
+            label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(247, 270);
+            label1.Location = new Point(216, 202);
             label1.Name = "label1";
-            label1.Size = new Size(66, 25);
+            label1.Size = new Size(53, 20);
             label1.TabIndex = 20;
             label1.Text = "00 : 00";
             // 
             // OTPForRegister
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(439, 356);
+            ClientSize = new Size(384, 267);
             Controls.Add(label1);
             Controls.Add(YuborishLabel);
             Controls.Add(guna2HtmlLabel3);
@@ -166,8 +163,7 @@
             Controls.Add(SMSKodTextBox);
             Controls.Add(guna2HtmlLabel2);
             Controls.Add(guna2HtmlLabel1);
-            Margin = new Padding(3, 4, 3, 4);
-            MinimumSize = new Size(455, 392);
+            MinimumSize = new Size(400, 304);
             Name = "OTPForRegister";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "OTP";

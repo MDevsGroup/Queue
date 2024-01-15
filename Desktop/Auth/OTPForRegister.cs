@@ -1,5 +1,6 @@
 ﻿using BusinessLogicLayer.Interfaces;
 using BusinessLogicLayer.UserDtos;
+using Messager.EskizUz;
 using Toastr.Winforms;
 
 namespace Desktop.Auth
@@ -21,6 +22,7 @@ namespace Desktop.Auth
 
         private void YuborishLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            MessagerAgent messager = new MessagerAgent("mirabbosegamberdiyev7@gmail.com", "bYD5qpHPCDroxznocwGj4T2nKb3InuZ1pBNlrh8d");
 
         }
 
