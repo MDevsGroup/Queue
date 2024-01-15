@@ -34,7 +34,7 @@ namespace Desktop.Auth
             }
             else
             {
-                new Toast().ShowWarning("Kod noto'g'ri");
+                new Toast(ToastrPosition.TopCenter, duration: 3000, enableSoundEffect: true).ShowWarning("Kod noto'g'ri");
             }
         }
 
