@@ -26,16 +26,16 @@ namespace Desktop.Auth
             var phoneNumber = registerDto.PhoneNumber;
             await Task.Run(async () =>
                 {
-                    var messager = new MessagerAgent("mirabbosegamberdiyev7@gmail.com", "bYD5qpHPCDroxznocwGj4T2nKb3InuZ1pBNlrh8d");
+                    var messager = new MessagerAgent("sardorsaminov5@gmail.com", "AOZG0pbutgYE9zxfvue6ZuMlqBNVUlti9ouMGWmD");
                     var natija = await messager.SendOtpAsync(phoneNumber);
                 });
 
             remainingSeconds = 30;
-            timer1.Tick += new EventHandler(timer1_Tick);
+            timer.Tick += new EventHandler(timer1_Tick);
 
-            timer1.Interval = 1000;
+            timer.Interval = 1000;
 
-            timer1.Start();
+            timer.Start();
 
 
         }
@@ -45,7 +45,7 @@ namespace Desktop.Auth
             if (refreshCode == int.Parse(SMSKodTextBox.Text))
             {
                 _userInterface.Registration(registerDto);
-                timer1.Stop();
+                timer.Stop();
                 this.Hide();
                 Login login = new Login(_userInterface);
                 login.Show();
@@ -58,11 +58,11 @@ namespace Desktop.Auth
 
         private void OTPForRegister_Load(object sender, EventArgs e)
         {
-            timer1.Tick += new EventHandler(timer1_Tick);
+            timer.Tick += new EventHandler(timer1_Tick);
 
-            timer1.Interval = 1000;
+            timer.Interval = 1000;
 
-            timer1.Start();
+            timer.Start();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -74,7 +74,7 @@ namespace Desktop.Auth
             }
             else
             {
-                timer1.Stop();
+                timer.Stop();
                 toast.ShowWarning("Sms kod ni amal qilish muddati tugadi!");
                 refreshCode = 0;
                 YuborishLabel.Visible = true;
