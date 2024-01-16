@@ -15,7 +15,7 @@ namespace Desktop.Auth
             _userInterface = userInterface;
             _phoneNumber = phoneNumber;
         }
-        
+
         private async void SaqlashBtn_Click(object sender, EventArgs e)
         {
             var toast = new Toast(ToastrPosition.TopCenter, duration: 3000, enableSoundEffect: true);
@@ -33,7 +33,7 @@ namespace Desktop.Auth
                     this.Close();
                     login.Show();
                 }
-                catch(ArgumentNullException ex)
+                catch (ArgumentNullException ex)
                 {
                     new Toast(ToastrPosition.TopCenter, duration: 3000, enableSoundEffect: true).ShowError(ex.Message);
                 }
@@ -61,6 +61,25 @@ namespace Desktop.Auth
             if (str1.Length < 3) return (false, "Parol uzunligi 3 tadan uzun bo'lishi shart!");
 
             return (true, "OK");
+        }
+
+        private void checkbox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkbox.Checked)
+            {
+                ParolTextBox.UseSystemPasswordChar = false;
+                ParolTextBox.PasswordChar = '\0';
+
+                ParolniTiklashTextBox.UseSystemPasswordChar = false;
+                ParolniTiklashTextBox.PasswordChar = '\0';
+            }
+            else
+            {
+                ParolTextBox.UseSystemPasswordChar = true;
+                ParolTextBox.PasswordChar = '\u25CF';
+                ParolniTiklashTextBox.UseSystemPasswordChar = true;
+                ParolniTiklashTextBox.PasswordChar = '\u25CF';
+            }
         }
     }
 }

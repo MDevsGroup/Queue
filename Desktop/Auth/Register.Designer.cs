@@ -220,7 +220,7 @@
             ParolniTastiqlashBox.ForeColor = Color.FromArgb(102, 102, 102);
             ParolniTastiqlashBox.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             ParolniTastiqlashBox.Location = new Point(178, 342);
-            ParolniTastiqlashBox.Margin = new Padding(5, 5, 5, 5);
+            ParolniTastiqlashBox.Margin = new Padding(5);
             ParolniTastiqlashBox.Name = "ParolniTastiqlashBox";
             ParolniTastiqlashBox.PasswordChar = '●';
             ParolniTastiqlashBox.PlaceholderText = "";
@@ -260,7 +260,7 @@
             ParolTextBox.ForeColor = Color.FromArgb(102, 102, 102);
             ParolTextBox.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             ParolTextBox.Location = new Point(178, 282);
-            ParolTextBox.Margin = new Padding(5, 5, 5, 5);
+            ParolTextBox.Margin = new Padding(5);
             ParolTextBox.Name = "ParolTextBox";
             ParolTextBox.PasswordChar = '●';
             ParolTextBox.PlaceholderText = "";
@@ -309,7 +309,7 @@
             guna2HtmlLabel8.Anchor = AnchorStyles.None;
             guna2HtmlLabel8.BackColor = Color.Transparent;
             guna2HtmlLabel8.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            guna2HtmlLabel8.Location = new Point(64, 473);
+            guna2HtmlLabel8.Location = new Point(64, 475);
             guna2HtmlLabel8.Name = "guna2HtmlLabel8";
             guna2HtmlLabel8.Size = new Size(159, 23);
             guna2HtmlLabel8.TabIndex = 14;
@@ -332,7 +332,7 @@
             telBox.ForeColor = Color.FromArgb(102, 102, 102);
             telBox.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             telBox.Location = new Point(178, 225);
-            telBox.Margin = new Padding(5, 5, 5, 5);
+            telBox.Margin = new Padding(5);
             telBox.MaxLength = 13;
             telBox.Name = "telBox";
             telBox.PasswordChar = '\0';
@@ -350,7 +350,7 @@
             LoginLink.AutoSize = true;
             LoginLink.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             LoginLink.LinkColor = Color.Navy;
-            LoginLink.Location = new Point(245, 475);
+            LoginLink.Location = new Point(257, 476);
             LoginLink.Name = "LoginLink";
             LoginLink.Size = new Size(51, 21);
             LoginLink.TabIndex = 17;
@@ -368,7 +368,7 @@
             checkbox.CheckedState.FillColor = Color.FromArgb(94, 148, 255);
             checkbox.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             checkbox.ImageAlign = ContentAlignment.MiddleRight;
-            checkbox.Location = new Point(342, 476);
+            checkbox.Location = new Point(342, 474);
             checkbox.Name = "checkbox";
             checkbox.Size = new Size(151, 25);
             checkbox.TabIndex = 29;

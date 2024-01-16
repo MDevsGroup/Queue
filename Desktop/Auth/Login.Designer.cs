@@ -143,11 +143,11 @@
             // 
             RegisterLink.Anchor = AnchorStyles.None;
             RegisterLink.AutoSize = true;
-            RegisterLink.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            RegisterLink.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
             RegisterLink.LinkColor = Color.Navy;
-            RegisterLink.Location = new Point(230, 333);
+            RegisterLink.Location = new Point(230, 328);
             RegisterLink.Name = "RegisterLink";
-            RegisterLink.Size = new Size(75, 21);
+            RegisterLink.Size = new Size(68, 20);
             RegisterLink.TabIndex = 23;
             RegisterLink.TabStop = true;
             RegisterLink.Text = " Register";
@@ -168,11 +168,11 @@
             // 
             SMSLabel.Anchor = AnchorStyles.None;
             SMSLabel.AutoSize = true;
-            SMSLabel.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            SMSLabel.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
             SMSLabel.LinkColor = Color.Navy;
             SMSLabel.Location = new Point(230, 357);
             SMSLabel.Name = "SMSLabel";
-            SMSLabel.Size = new Size(163, 21);
+            SMSLabel.Size = new Size(154, 20);
             SMSLabel.TabIndex = 25;
             SMSLabel.TabStop = true;
             SMSLabel.Text = "SMS kod orqali kirish";

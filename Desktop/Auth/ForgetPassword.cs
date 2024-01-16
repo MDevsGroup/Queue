@@ -17,6 +17,14 @@ public partial class ForgetPassword : Form
     private async void KodniOlishBtn_Click(object sender, EventArgs e)
     {
         var phoneNumber = telBox.Text;
+        if (telBox.Text.Length == 9)
+        {
+            phoneNumber = "+998" + telBox.Text;
+        }
+        else
+        {
+            phoneNumber = telBox.Text;
+        }
         var check = await _userInterface.GetByPhoneNumber(phoneNumber);
         if (check)
         {
