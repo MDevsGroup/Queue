@@ -35,7 +35,7 @@ public partial class OTP : Form
             _userInterface.Registration(registerDto);
             timer1.Stop();
             this.Hide();
-            ResetPassword resetPassword = new ResetPassword(_userInterface);
+            ResetPassword resetPassword = new ResetPassword(_userInterface, _phoneNumber);
             resetPassword.Show();
 
         }
