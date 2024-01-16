@@ -208,6 +208,7 @@
             KirishBtn.TabIndex = 26;
             KirishBtn.Text = "Kirish";
             KirishBtn.Click += KirishBtn_Click;
+            KirishBtn.Enter += KirishBtn_Enter;
             // 
             // Eslabqolish
             // 

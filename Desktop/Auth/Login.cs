@@ -83,9 +83,14 @@ public partial class Login : Form
 
     private void RegisterLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-        
+
         this.Hide();
         Register register = new Register(_userInterface);
         register.Show();
+    }
+
+    private void KirishBtn_Enter(object sender, EventArgs e)
+    {
+
     }
 }

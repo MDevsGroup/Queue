@@ -108,6 +108,12 @@ public partial class Register : Form
 
     public async void SaqlashBtn_Click(object sender, EventArgs e)
     {
+        Saved();
+    }
+
+
+    public async void Saved()
+    {
         var toast = new Toast(ToastrPosition.TopCenter, duration: 3000, enableSoundEffect: true);
 
         if (ParolTextBox.Text != ParolniTastiqlashBox.Text)
@@ -181,6 +187,7 @@ public partial class Register : Form
             });
         }
     }
+
     private void checkbox_CheckedChanged(object sender, EventArgs e)
     {
         if (checkbox.Checked)
@@ -231,4 +238,10 @@ public partial class Register : Form
             SaqlashBtn.Focus();
         }
     }
+
+    private async void SaqlashBtn_Enter(object sender, EventArgs e)
+    {
+         Saved();
+    }
 }
+
