@@ -24,13 +24,14 @@ public partial class ForgetPassword : Form
         await Task.Run(async () =>
         {
 
-            var messager = new MessagerAgent("sardorsaminov5@gmail.com", "AOZG0pbutgYE9zxfvue6ZuMlqBNVUlti9ouMGWmD");
+            var messager = new MessagerAgent("sardorsaminov@gmail.com", "AOZG0pbutgYE9zxfvue6ZuMlqBNVUlti9ouMGWmD");
             var natija = await messager.SendOtpAsync(phoneNumber);
-            if (natija.Success)
+            if (!natija.Success)
             {
                 this.Invoke((MethodInvoker)delegate
                 {
-                    OTP otpForm = new OTP(_userInterface);
+                    var phoneNumber = telBox.Text;
+                    OTP otpForm = new OTP(phoneNumber);
                     this.Hide();
                     otpForm.Show();
                 });

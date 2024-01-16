@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -38,6 +39,8 @@
             TasdiqlashBtn = new Guna.UI2.WinForms.Guna2Button();
             guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             YuborishLabel = new LinkLabel();
+            timer1 = new System.Windows.Forms.Timer(components);
+            label1 = new Label();
             SuspendLayout();
             // 
             // guna2HtmlLabel1
@@ -134,13 +137,25 @@
             YuborishLabel.TabIndex = 19;
             YuborishLabel.TabStop = true;
             YuborishLabel.Text = "Yuborish";
+            YuborishLabel.Visible = false;
             YuborishLabel.LinkClicked += YuborishLabel_LinkClicked;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 9.5F);
+            label1.Location = new Point(224, 205);
+            label1.Name = "label1";
+            label1.Size = new Size(47, 17);
+            label1.TabIndex = 20;
+            label1.Text = "00 : 00";
             // 
             // OTP
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(384, 267);
+            Controls.Add(label1);
             Controls.Add(YuborishLabel);
             Controls.Add(guna2HtmlLabel3);
             Controls.Add(TasdiqlashBtn);
@@ -151,6 +166,7 @@
             Name = "OTP";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "OTP";
+            Load += OTP_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -163,5 +179,7 @@
         private Guna.UI2.WinForms.Guna2Button TasdiqlashBtn;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
         private LinkLabel YuborishLabel;
+        private System.Windows.Forms.Timer timer1;
+        private Label label1;
     }
 }
