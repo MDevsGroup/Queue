@@ -21,19 +21,28 @@ public partial class ForgetPassword : Form
     private async void KodniOlishBtn_Click(object sender, EventArgs e)
     {
         var phoneNumber = telBox.Text;
-        var messager = new MessagerAgent("mirabbosegamberdiyev7@gmail.com", "bYD5qpHPCDroxznocwGj4T2nKb3InuZ1pBNlrh8d");
-        var natija = await messager.SendOtpAsync(phoneNumber);
-        if(natija.Success)
+        await Task.Run(async () =>
         {
-            Close();
-            OTP otpForm = new OTP(_userInterface);
-            otpForm.Show();
-        }
-        else
-        {
-            var toast = new Toast(ToastrPosition.TopCenter, duration: 3000, enableSoundEffect: true);
-            toast.ShowWarning("Telfon raqamga SMS yuborishda hatolik yuz berdi");
-        }
+
+            var messager = new MessagerAgent("mirabbosegamberdiyev7@gmail.com", "bYD5qpHPCDroxznocwGj4T2nKb3InuZ1pBNlrh8d");
+            var natija = await messager.SendOtpAsync(phoneNumber);
+            if (natija.Success)
+            {
+                Close();
+                OTP otpForm = new OTP(_userInterface);
+                otpForm.Show();
+            }
+            else
+            {
+                this.Invoke((MethodInvoker)delegate
+                {
+                    var toast = new Toast(ToastrPosition.TopCenter, duration: 3000, enableSoundEffect: true);
+                    toast.ShowWarning("Telefon raqamga SMS yuborishda xatolik yuz berdi");
+                });
+            }
+
+        });
+
 
     }
 

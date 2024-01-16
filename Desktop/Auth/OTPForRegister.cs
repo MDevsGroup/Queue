@@ -30,10 +30,13 @@ namespace Desktop.Auth
                     var natija = await messager.SendOtpAsync(phoneNumber);
                 });
 
-                timer1.Tick += timer1_Tick;
-                timer1.Interval = 1000;
-                timer1.Start();
-            
+            remainingSeconds = 30;
+            timer1.Tick += new EventHandler(timer1_Tick);
+
+            timer1.Interval = 1000;
+
+            timer1.Start();
+
 
         }
 
