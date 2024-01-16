@@ -22,17 +22,18 @@ public partial class OTP : Form
         _phoneNumber = oTPFor.PhoneNumber;
     }
 
-    public OTP(string phoneNumber)
+    public OTP(IUserInterface userInterface, string phoneNumber, int code)
     {
         InitializeComponent();
+        _userInterface = userInterface;
         _phoneNumber = phoneNumber;
+        refreshCode = code;
     }
 
     private void TasdiqlashBtn_Click(object sender, EventArgs e)
     {
         if (refreshCode == int.Parse(SMSKodTextBox.Text))
         {
-            _userInterface.Registration(registerDto);
             timer1.Stop();
             this.Hide();
             ResetPassword resetPassword = new ResetPassword(_userInterface, _phoneNumber);

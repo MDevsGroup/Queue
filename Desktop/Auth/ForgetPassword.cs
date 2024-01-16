@@ -8,46 +8,49 @@ namespace Desktop.Auth;
 public partial class ForgetPassword : Form
 {
     private readonly IUserInterface _userInterface;
-
+    private int _code;
     public ForgetPassword(IUserInterface userInterface)
     {
         InitializeComponent();
         _userInterface = userInterface;
     }
-
-
-
-
     private async void KodniOlishBtn_Click(object sender, EventArgs e)
     {
         var phoneNumber = telBox.Text;
-        await Task.Run(async () =>
+        var check = await _userInterface.GetByPhoneNumber(phoneNumber);
+        if (check)
         {
-
-            var messager = new MessagerAgent("sardorsaminov@gmail.com", "AOZG0pbutgYE9zxfvue6ZuMlqBNVUlti9ouMGWmD");
-            var natija = await messager.SendOtpAsync(phoneNumber);
-            if (!natija.Success)
+            await Task.Run(async () =>
             {
-                this.Invoke((MethodInvoker)delegate
+
+                var messager = new MessagerAgent("sardorsaminov5@gmail.com", "AOZG0pbutgYE9zxfvue6ZuMlqBNVUlti9ouMGWmD");
+                var natija = await messager.SendOtpAsync(phoneNumber);
+                _code = natija.Code;
+                if (natija.Success)
                 {
-                    var phoneNumber = telBox.Text;
-                    OTP otpForm = new OTP(phoneNumber);
-                    this.Hide();
-                    otpForm.Show();
-                });
-            }
-            else
-            {
-                this.Invoke((MethodInvoker)delegate
+                    this.Invoke((MethodInvoker)delegate
+                    {
+                        var phoneNumber = telBox.Text;
+                        OTP otpForm = new OTP(_userInterface, phoneNumber, _code);
+                        this.Hide();
+                        otpForm.Show();
+                    });
+                }
+                else
                 {
-                    var toast = new Toast(ToastrPosition.TopCenter, duration: 3000, enableSoundEffect: true);
-                    toast.ShowWarning("Telefon raqamga SMS yuborishda xatolik yuz berdi");
-                });
-            }
+                    this.Invoke((MethodInvoker)delegate
+                    {
+                        var toast = new Toast(ToastrPosition.TopCenter, duration: 3000, enableSoundEffect: true);
+                        toast.ShowWarning("Telefon raqamga SMS yuborishda xatolik yuz berdi");
+                    });
+                }
 
-        });
-
-
+            });
+        }
+        else
+        {
+            new Toast(ToastrPosition.TopCenter, duration: 3000, enableSoundEffect: true).ShowError("Bunday foydalanuvchi mavjud emas");
+        }
     }
 
     private void telBox_KeyPress(object sender, KeyPressEventArgs e)

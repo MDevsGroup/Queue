@@ -12,13 +12,21 @@ public class UserService(AppDbContext dbContext) : IUserInterface
 {
     private readonly AppDbContext _dbContext = dbContext;
 
-    public Task UpdatePassword(string newPassword)
+    public async Task UpdatePassword(string phoneNumber, string newPassword)
     {
-        throw new NotImplementedException();
+        var user = await _dbContext.Users.FirstOrDefaultAsync(i => i.PhoneNumber == phoneNumber);
+        if (user != null)
+        {
+            user.Parol = newPassword;
+            user.TasqidParol = newPassword;
+            _dbContext.Users.Update(user);
+            await _dbContext.SaveChangesAsync();
+        }
+        else
+        {
+            throw new ArgumentNullException("User not found");
+        }
     }
-
-
-
     public async Task Login(LoginDto loginDto)
     {
         var user = _dbContext.Users.SingleOrDefault(s => s.PhoneNumber == loginDto.PhoneNumber);
@@ -68,5 +76,15 @@ public class UserService(AppDbContext dbContext) : IUserInterface
         {
             return false;
         }
+    }
+
+    public async Task<bool> GetByPhoneNumber(string number)
+    {
+        var check = await _dbContext.Users.FirstOrDefaultAsync(i => i.PhoneNumber == number);
+        if (check != null)
+        {
+            return true;
+        }
+        return false;
     }
 }

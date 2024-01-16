@@ -15,8 +15,8 @@ namespace Desktop.Auth
             _userInterface = userInterface;
             _phoneNumber = phoneNumber;
         }
-
-        private void SaqlashBtn_Click(object sender, EventArgs e)
+        
+        private async void SaqlashBtn_Click(object sender, EventArgs e)
         {
             var toast = new Toast(ToastrPosition.TopCenter, duration: 3000, enableSoundEffect: true);
             var check = Textvalidator(ParolTextBox.Text, ParolniTiklashTextBox.Text);
@@ -26,12 +26,19 @@ namespace Desktop.Auth
             }
             else
             {
-
+                try
+                {
+                    await _userInterface.UpdatePassword(_phoneNumber, ParolTextBox.Text);
+                    Login login = new(_userInterface);
+                    this.Close();
+                    login.Show();
+                }
+                catch(ArgumentNullException ex)
+                {
+                    new Toast(ToastrPosition.TopCenter, duration: 3000, enableSoundEffect: true).ShowError(ex.Message);
+                }
             }
         }
-
-
-
         private void RegisterLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Hide();
@@ -46,7 +53,6 @@ namespace Desktop.Auth
         {
             ParolniTiklashTextBox.MaxLength = 20;
         }
-
 
         private (bool, string) Textvalidator(string str1, string str2)
         {
