@@ -12,7 +12,7 @@ public class UserService(AppDbContext dbContext) : IUserInterface
 {
     private readonly AppDbContext _dbContext = dbContext;
 
-    public Task ForgetPasswor(ForgetDto forgetDto)
+    public Task UpdatePassword(string newPassword)
     {
         throw new NotImplementedException();
     }

@@ -6,34 +6,27 @@ namespace Desktop.Auth
     public partial class ResetPassword : Form
     {
         private readonly IUserInterface _userInterface;
+        private readonly string _phoneNumber;
 
-        public ResetPassword(IUserInterface userInterface)
+        public ResetPassword(IUserInterface userInterface,
+                             string phoneNumber)
         {
             InitializeComponent();
             _userInterface = userInterface;
+            _phoneNumber = phoneNumber;
         }
 
         private void SaqlashBtn_Click(object sender, EventArgs e)
         {
             var toast = new Toast(ToastrPosition.TopCenter, duration: 3000, enableSoundEffect: true);
-
-            if (ParolTextBox.Text.Length == ParolniTiklashTextBox.Text.Length)
+            var check = Textvalidator(ParolTextBox.Text, ParolniTiklashTextBox.Text);
+            if (check.Item1 == false)
             {
-                for (int i = 0; i < ParolTextBox.Text.Length; i++)
-                {
-                    if (ParolTextBox.Text[i] != ParolniTiklashTextBox.Text[i])
-                    {
-                        toast.ShowWarning("Parol bir hil emas");
-                        return;
-                    }
-                }
-                this.Hide();
-                Login login = new(_userInterface);
-                login.Show();
+                new Toast(ToastrPosition.TopCenter, duration: 3000, enableSoundEffect: true).ShowWarning(check.Item2);
             }
             else
             {
-                toast.ShowWarning("Parol bir hil emas");
+
             }
         }
 
@@ -52,6 +45,16 @@ namespace Desktop.Auth
         private void ParolniTiklashTextBox_TextChanged(object sender, EventArgs e)
         {
             ParolniTiklashTextBox.MaxLength = 20;
+        }
+
+
+        private (bool, string) Textvalidator(string str1, string str2)
+        {
+            if (str1 != str2) return (false, "Parol bir hil emas");
+
+            if (str1.Length < 3) return (false, "Parol uzunligi 3 tadan uzun bo'lishi shart!");
+
+            return (true, "OK");
         }
     }
 }
