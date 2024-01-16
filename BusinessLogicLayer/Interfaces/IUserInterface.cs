@@ -9,5 +9,5 @@ public interface IUserInterface
     void Registration(RegisterDto registerDto);
     Task<bool> RegistrationCheck(RegisterDto registerDto);
     Task Login(LoginDto loginDto);
-    Task ForgetPasswor(ForgetDto forgetDto);
+    Task UpdatePassword(string newPassword);
 }
