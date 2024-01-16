@@ -23,6 +23,7 @@ namespace Desktop.Auth
 
         private async void YuborishLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            YuborishLabel.Visible = false;
             var phoneNumber = registerDto.PhoneNumber;
             await Task.Run(async () =>
                 {
@@ -31,13 +32,10 @@ namespace Desktop.Auth
                 });
 
             remainingSeconds = 30;
-            timer.Tick += new EventHandler(timer1_Tick);
 
             timer.Interval = 1000;
 
             timer.Start();
-
-
         }
 
         private void TasdiqlashBtn_Click(object sender, EventArgs e)
@@ -75,7 +73,7 @@ namespace Desktop.Auth
             else
             {
                 timer.Stop();
-                toast.ShowWarning("Sms kod ni amal qilish muddati tugadi!");
+                new Toast(ToastrPosition.TopCenter, duration: 3000, enableSoundEffect: true).ShowWarning("Sms kod ni amal qilish muddati tugadi!");
                 refreshCode = 0;
                 YuborishLabel.Visible = true;
             }
