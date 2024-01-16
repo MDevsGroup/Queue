@@ -143,7 +143,7 @@ public partial class Register : Form
                 var result = await _userInterface.RegistrationCheck(registerDto);
                 if (result)
                 {
-                    var messager = new MessagerAgent("mirabbosegamberdiyev7@gmail.com", "bYD5qpHPCDroxznocwGj4T2nKb3InuZ1pBNlrh8d");
+                    var messager = new MessagerAgent("sardorsaminov5@gmail.com", "AOZG0pbutgYE9zxfvue6ZuMlqBNVUlti9ouMGWmD");
                     var natija = await messager.SendOtpAsync(phoneNumber);
                     var code = natija.Code;
                     if (natija.Success)
