@@ -2,6 +2,7 @@ using BusinessLogicLayer.Interfaces;
 using BusinessLogicLayer.Services;
 using DataAccessLayer.Data;
 using Desktop.Auth;
+using Desktop.Bankomats;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System.Windows.Forms;
@@ -27,12 +28,13 @@ internal static class Program
 
         var serviceProvider = services.BuildServiceProvider();
 
-        var form1 = serviceProvider.GetRequiredService<Register>();
+        //var form1 = serviceProvider.GetRequiredService<Register>();
+        var form1 = serviceProvider.GetRequiredService<Stoyka>();
         Application.Run(form1);
     }
     private static void ConfigureServices(IServiceCollection services)
     {
-        const string connectionString = "Host=192.168.35.187;Port=5432;Database=Navbat;Username=postgres;Password=1234";
+        const string connectionString = "Host=192.168.33.80;Port=5432;Database=Navbat;Username=postgres;Password=1234";
 
         services.AddDbContext<AppDbContext>(options =>
             options.UseNpgsql(connectionString, o => o.EnableRetryOnFailure()), ServiceLifetime.Transient, ServiceLifetime.Transient);
@@ -44,6 +46,7 @@ internal static class Program
         services.AddScoped<ForgetPassword>();
         services.AddScoped<ResetPassword>();
         services.AddScoped<OTP>();
+        services.AddScoped<Stoyka>();
     }
 
 }

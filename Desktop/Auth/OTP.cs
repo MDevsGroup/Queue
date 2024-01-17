@@ -9,7 +9,7 @@ public partial class OTP : Form
     private readonly IUserInterface _userInterface;
     public Toast toast = new Toast(ToastrPosition.TopCenter, duration: 3000, enableSoundEffect: true);
     private RegisterDto registerDto;
-    private int remainingSeconds = 30;
+    private int remainingSeconds = 120;
     private int refreshCode;
     private string _phoneNumber;
 
@@ -56,7 +56,7 @@ public partial class OTP : Form
             var natija = await messager.SendOtpAsync(phoneNumber);
         });
 
-        remainingSeconds = 30;
+        remainingSeconds = 120;
 
         timer1.Interval = 1000;
 

@@ -10,7 +10,7 @@ namespace Desktop.Auth
         private readonly IUserInterface _userInterface;
         public Toast toast = new Toast(ToastrPosition.TopCenter, duration: 3000, enableSoundEffect: true);
         private RegisterDto registerDto;
-        private int remainingSeconds = 30;
+        private int remainingSeconds = 120;
         private int refreshCode;
 
         public OTPForRegister(RegisterDto oTPFor, IUserInterface userInterface, int code)
@@ -31,7 +31,7 @@ namespace Desktop.Auth
                     var natija = await messager.SendOtpAsync(phoneNumber);
                 });
 
-            remainingSeconds = 30;
+            remainingSeconds = 120;
 
             timer.Interval = 1000;
 
