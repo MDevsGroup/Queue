@@ -5,9 +5,11 @@ VisualStudioVersion = 17.8.34309.116
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Desktop", "Desktop\Desktop.csproj", "{815D51C7-70A5-465B-956B-624FC75ED6D2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayer", "DataAccessLayer\DataAccessLayer.csproj", "{8ADDB186-8042-4718-BB2B-9B57BD138B45}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccessLayer", "DataAccessLayer\DataAccessLayer.csproj", "{8ADDB186-8042-4718-BB2B-9B57BD138B45}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLogicLayer", "BusinessLogicLayer\BusinessLogicLayer.csproj", "{0719B702-C1B1-4559-8A34-95A6F55D8793}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessLogicLayer", "BusinessLogicLayer\BusinessLogicLayer.csproj", "{0719B702-C1B1-4559-8A34-95A6F55D8793}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankamatLayer", "BankamatLayer\BankamatLayer.csproj", "{DDE0CC2E-4C6F-4F7A-BA14-0B2225E74490}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{0719B702-C1B1-4559-8A34-95A6F55D8793}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0719B702-C1B1-4559-8A34-95A6F55D8793}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0719B702-C1B1-4559-8A34-95A6F55D8793}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDE0CC2E-4C6F-4F7A-BA14-0B2225E74490}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDE0CC2E-4C6F-4F7A-BA14-0B2225E74490}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDE0CC2E-4C6F-4F7A-BA14-0B2225E74490}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDE0CC2E-4C6F-4F7A-BA14-0B2225E74490}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

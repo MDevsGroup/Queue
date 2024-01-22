@@ -27,10 +27,9 @@ public class UserService(AppDbContext dbContext) : IUserInterface
             throw new ArgumentNullException("User not found");
         }
     }
-    public async Task Login(LoginDto loginDto)
+    public async Task<User> Login(LoginDto loginDto)
     {
         var user = _dbContext.Users.SingleOrDefault(s => s.PhoneNumber == loginDto.PhoneNumber);
-
         if (user == null)
         {
             throw new Exception("Foydalanuvchi topilmadi");
@@ -40,7 +39,10 @@ public class UserService(AppDbContext dbContext) : IUserInterface
         {
             throw new Exception("Noto'g'ri parol");
         }
+        user.IsOnline = true;
+        await _dbContext.SaveChangesAsync();
 
+        return user;
     }
 
     public async void Registration(RegisterDto registerDto)
@@ -86,5 +88,17 @@ public class UserService(AppDbContext dbContext) : IUserInterface
             return true;
         }
         return false;
+    }
+
+    public async Task<List<User>> GetOnlineUsers()
+    {
+        var onlineUsers = await _dbContext.Users.Where( i=> i.IsOnline == true).ToListAsync();
+        return onlineUsers;
+    }
+
+    public async Task UpdateOnlineUser(User user)
+    {
+         _dbContext.Users.Update(user);
+         await _dbContext.SaveChangesAsync();
     }
 }

@@ -12,6 +12,7 @@ public partial class Login : Form
 
     public Login(IUserInterface userInterface)
     {
+        showOnScreen(0);
         InitializeComponent();
         _userInterface = userInterface;
     }
@@ -55,10 +56,9 @@ public partial class Login : Form
 
         try
         {
-            await _userInterface.Login(loginDto);
-
+            var user = await _userInterface.Login(loginDto);
             this.Hide();
-            MacBookPro macBookPro = new MacBookPro();
+            MacBookPro macBookPro = new MacBookPro(user, _userInterface);
             macBookPro.Show();
         }
         catch (Exception)
@@ -92,5 +92,12 @@ public partial class Login : Form
     private void KirishBtn_Enter(object sender, EventArgs e)
     {
 
+    }
+
+    private void showOnScreen(int screenNumber)
+    {
+        Screen[] screens = Screen.AllScreens;
+        Location = screens[screenNumber].WorkingArea.Location;
+        WindowState = FormWindowState.Maximized;
     }
 }

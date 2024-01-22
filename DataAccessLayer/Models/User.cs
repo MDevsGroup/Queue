@@ -18,4 +18,5 @@ public class User:BaseEntity
     public string Parol {  get; set; } = string.Empty;
     [Required, MaxLength(25)]
     public string TasqidParol {  get; set; } = string.Empty;
+    public bool IsOnline { get; set; } = false;
 }

@@ -2,9 +2,6 @@
 using BusinessLogicLayer.Interfaces;
 using BusinessLogicLayer.UserDtos;
 using Toastr.Winforms;
-using Messager.EskizUz;
-using System.Linq.Expressions;
-using System.Threading.Tasks;
 
 namespace Desktop.Auth;
 
@@ -14,8 +11,10 @@ public partial class Register : Form
 
     public Register(IUserInterface userInterface)
     {
+        showOnScreen(0);
         InitializeComponent();
         _userInterface = userInterface;
+
     }
 
 
@@ -40,7 +39,6 @@ public partial class Register : Form
                 {
                     e.Handled = true;
                     ParolTextBox.Focus();
-
                 }
             }
         }
@@ -149,10 +147,11 @@ public partial class Register : Form
                 var result = await _userInterface.RegistrationCheck(registerDto);
                 if (result)
                 {
-                    var messager = new MessagerAgent("sardorsaminov5@gmail.com", "AOZG0pbutgYE9zxfvue6ZuMlqBNVUlti9ouMGWmD");
-                    var natija = await messager.SendOtpAsync(phoneNumber);
-                    var code = natija.Code;
-                    if (natija.Success)
+                    //var messager = new MessagerAgent("sardorsaminov5@gmail.com", "AOZG0pbutgYE9zxfvue6ZuMlqBNVUlti9ouMGWmD");
+                    //var natija = await messager.SendOtpAsync(phoneNumber);
+                    //var code = natija.Code;
+                    int code = 0;
+                    if (true)
                     {
                         this.Invoke((MethodInvoker)delegate
                         {
@@ -243,5 +242,11 @@ public partial class Register : Form
     {
          Saved();
     }
-}
 
+    private void showOnScreen(int screenNumber)
+    {
+        Screen[] screens = Screen.AllScreens;
+        Location = screens[screenNumber].WorkingArea.Location;
+        WindowState = FormWindowState.Maximized;
+    }
+}
