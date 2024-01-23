@@ -39,9 +39,10 @@ public partial class Login : Form
 
     private void SMSLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-        this.Hide();
+        Hide();
         ForgetPassword forgetPassword = new ForgetPassword(_userInterface);
-        forgetPassword.Show();
+        forgetPassword.ShowDialog();
+        Close();
     }
 
     private async void KirishBtn_Click(object sender, EventArgs e)
@@ -99,5 +100,10 @@ public partial class Login : Form
         Screen[] screens = Screen.AllScreens;
         Location = screens[screenNumber].WorkingArea.Location;
         WindowState = FormWindowState.Maximized;
+    }
+
+    private void Login_FormClosed(object sender, FormClosedEventArgs e)
+    {
+        Application.Exit();
     }
 }

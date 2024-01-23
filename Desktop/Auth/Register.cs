@@ -99,9 +99,10 @@ public partial class Register : Form
 
     private void LoginLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-        this.Hide();
+        Hide();
         Login login = new Login(_userInterface);
-        login.Show();
+        login.ShowDialog();
+        Close();
     }
 
     public async void SaqlashBtn_Click(object sender, EventArgs e)
@@ -240,7 +241,7 @@ public partial class Register : Form
 
     private async void SaqlashBtn_Enter(object sender, EventArgs e)
     {
-         Saved();
+        Saved();
     }
 
     private void showOnScreen(int screenNumber)
@@ -248,5 +249,10 @@ public partial class Register : Form
         Screen[] screens = Screen.AllScreens;
         Location = screens[screenNumber].WorkingArea.Location;
         WindowState = FormWindowState.Maximized;
+    }
+
+    private void Register_FormClosed(object sender, FormClosedEventArgs e)
+    {
+        Application.Exit();
     }
 }

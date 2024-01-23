@@ -105,7 +105,7 @@
             guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             guna2Button1.Font = new Font("Segoe UI", 9F);
             guna2Button1.ForeColor = Color.White;
-            guna2Button1.Location = new Point(532, 13);
+            guna2Button1.Location = new Point(530, 6);
             guna2Button1.Name = "guna2Button1";
             guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges4;
             guna2Button1.Size = new Size(180, 45);
@@ -140,7 +140,7 @@
             MainPanel.Size = new Size(734, 370);
             MainPanel.TabIndex = 2;
             // 
-            // Form1
+            // Bankamant
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -150,7 +150,7 @@
             Controls.Add(guna2CustomGradientPanel1);
             Controls.Add(topPanel);
             MinimumSize = new Size(750, 549);
-            Name = "Form1";
+            Name = "Bankamant";
             StartPosition = FormStartPosition.CenterParent;
             Text = "Stoyka";
             topPanel.ResumeLayout(false);

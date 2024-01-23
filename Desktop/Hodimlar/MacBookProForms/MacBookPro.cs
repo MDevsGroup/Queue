@@ -47,9 +47,9 @@ public partial class MacBookPro : Form
 
     private void closeBrt_Click(object sender, EventArgs e)
     {
-        this.Close();
         _user.IsOnline = false;
         _userInterface.UpdateOnlineUser(_user);
+        Application.Exit();
     }
 
     private void controlWaiting1_Load(object sender, EventArgs e)

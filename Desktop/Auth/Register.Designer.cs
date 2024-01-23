@@ -411,6 +411,7 @@
             Name = "Register";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Register";
+            FormClosed += Register_FormClosed;
             ResumeLayout(false);
             PerformLayout();
         }

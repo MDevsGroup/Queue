@@ -27,7 +27,7 @@ internal static class Program
 
         var serviceProvider = services.BuildServiceProvider();
 
-        var form1 = serviceProvider.GetRequiredService<Register>();
+        var form1 = serviceProvider.GetRequiredService<Login>();
         //var form2 = serviceProvider.GetRequiredService<Stoyka>();
         //Application.Run(form1);
         Application.Run(form1);
