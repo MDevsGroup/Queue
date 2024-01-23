@@ -43,7 +43,7 @@ namespace Desktop.Auth
         private void RegisterLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Hide();
-            
+
         }
 
         private void ParolTextBox_TextChanged(object sender, EventArgs e)
@@ -82,6 +82,11 @@ namespace Desktop.Auth
                 ParolniTiklashTextBox.UseSystemPasswordChar = true;
                 ParolniTiklashTextBox.PasswordChar = '\u25CF';
             }
+        }
+
+        private void ResetPassword_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

@@ -99,7 +99,7 @@
             guna2Button3.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             guna2Button3.ForeColor = Color.White;
             guna2Button3.Image = (Image)resources.GetObject("guna2Button3.Image");
-            guna2Button3.Location = new Point(50, 205);
+            guna2Button3.Location = new Point(50, 271);
             guna2Button3.Name = "guna2Button3";
             guna2Button3.ShadowDecoration.CustomizableEdges = customizableEdges2;
             guna2Button3.Size = new Size(201, 30);
@@ -119,7 +119,7 @@
             guna2Button2.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             guna2Button2.ForeColor = Color.White;
             guna2Button2.Image = (Image)resources.GetObject("guna2Button2.Image");
-            guna2Button2.Location = new Point(50, 256);
+            guna2Button2.Location = new Point(50, 322);
             guna2Button2.Name = "guna2Button2";
             guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges4;
             guna2Button2.Size = new Size(201, 30);
@@ -139,7 +139,7 @@
             guna2Button1.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             guna2Button1.ForeColor = Color.White;
             guna2Button1.Image = (Image)resources.GetObject("guna2Button1.Image");
-            guna2Button1.Location = new Point(50, 307);
+            guna2Button1.Location = new Point(50, 373);
             guna2Button1.Name = "guna2Button1";
             guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges6;
             guna2Button1.Size = new Size(201, 30);
@@ -159,7 +159,7 @@
             SaqlashBtn.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             SaqlashBtn.ForeColor = Color.White;
             SaqlashBtn.Image = (Image)resources.GetObject("SaqlashBtn.Image");
-            SaqlashBtn.Location = new Point(50, 153);
+            SaqlashBtn.Location = new Point(50, 219);
             SaqlashBtn.Name = "SaqlashBtn";
             SaqlashBtn.ShadowDecoration.CustomizableEdges = customizableEdges8;
             SaqlashBtn.Size = new Size(201, 30);

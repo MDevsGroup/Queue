@@ -41,8 +41,7 @@ public partial class ForgetPassword : Form
                         var phoneNumber = telBox.Text;
                         Hide();
                         OTP otpForm = new OTP(_userInterface, phoneNumber, _code);
-                        otpForm.ShowDialog();
-                        Application.Exit();
+                        otpForm.Show();
                     });
                 }
                 else
@@ -77,5 +76,10 @@ public partial class ForgetPassword : Form
     private void guna2HtmlLabel2_Click(object sender, EventArgs e)
     {
 
+    }
+
+    private void ForgetPassword_FormClosed(object sender, FormClosedEventArgs e)
+    {
+        Application.Exit();
     }
 }

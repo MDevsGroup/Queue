@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             SaqlashBtn = new Guna.UI2.WinForms.Guna2Button();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             ParolTextBox = new Guna.UI2.WinForms.Guna2TextBox();
@@ -49,7 +49,7 @@
             // 
             SaqlashBtn.Anchor = AnchorStyles.None;
             SaqlashBtn.BorderRadius = 6;
-            SaqlashBtn.CustomizableEdges = customizableEdges7;
+            SaqlashBtn.CustomizableEdges = customizableEdges1;
             SaqlashBtn.DisabledState.BorderColor = Color.DarkGray;
             SaqlashBtn.DisabledState.CustomBorderColor = Color.DarkGray;
             SaqlashBtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -59,7 +59,7 @@
             SaqlashBtn.ForeColor = Color.White;
             SaqlashBtn.Location = new Point(66, 237);
             SaqlashBtn.Name = "SaqlashBtn";
-            SaqlashBtn.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            SaqlashBtn.ShadowDecoration.CustomizableEdges = customizableEdges2;
             SaqlashBtn.Size = new Size(340, 39);
             SaqlashBtn.TabIndex = 30;
             SaqlashBtn.Text = "Saqlash";
@@ -83,7 +83,7 @@
             ParolTextBox.BackColor = SystemColors.Control;
             ParolTextBox.BorderRadius = 5;
             ParolTextBox.BorderThickness = 0;
-            ParolTextBox.CustomizableEdges = customizableEdges9;
+            ParolTextBox.CustomizableEdges = customizableEdges3;
             ParolTextBox.DefaultText = "";
             ParolTextBox.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             ParolTextBox.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -95,12 +95,12 @@
             ParolTextBox.ForeColor = Color.FromArgb(102, 102, 102);
             ParolTextBox.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             ParolTextBox.Location = new Point(66, 95);
-            ParolTextBox.Margin = new Padding(5, 5, 5, 5);
+            ParolTextBox.Margin = new Padding(5);
             ParolTextBox.Name = "ParolTextBox";
             ParolTextBox.PasswordChar = '●';
             ParolTextBox.PlaceholderText = "";
             ParolTextBox.SelectedText = "";
-            ParolTextBox.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            ParolTextBox.ShadowDecoration.CustomizableEdges = customizableEdges4;
             ParolTextBox.Size = new Size(340, 40);
             ParolTextBox.TabIndex = 28;
             ParolTextBox.UseSystemPasswordChar = true;
@@ -123,7 +123,7 @@
             ParolniTiklashTextBox.BackColor = SystemColors.Control;
             ParolniTiklashTextBox.BorderRadius = 5;
             ParolniTiklashTextBox.BorderThickness = 0;
-            ParolniTiklashTextBox.CustomizableEdges = customizableEdges11;
+            ParolniTiklashTextBox.CustomizableEdges = customizableEdges5;
             ParolniTiklashTextBox.DefaultText = "";
             ParolniTiklashTextBox.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             ParolniTiklashTextBox.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -135,12 +135,12 @@
             ParolniTiklashTextBox.ForeColor = Color.FromArgb(102, 102, 102);
             ParolniTiklashTextBox.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             ParolniTiklashTextBox.Location = new Point(66, 178);
-            ParolniTiklashTextBox.Margin = new Padding(5, 5, 5, 5);
+            ParolniTiklashTextBox.Margin = new Padding(5);
             ParolniTiklashTextBox.Name = "ParolniTiklashTextBox";
             ParolniTiklashTextBox.PasswordChar = '●';
             ParolniTiklashTextBox.PlaceholderText = "";
             ParolniTiklashTextBox.SelectedText = "";
-            ParolniTiklashTextBox.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            ParolniTiklashTextBox.ShadowDecoration.CustomizableEdges = customizableEdges6;
             ParolniTiklashTextBox.Size = new Size(340, 40);
             ParolniTiklashTextBox.TabIndex = 32;
             ParolniTiklashTextBox.UseSystemPasswordChar = true;
@@ -221,6 +221,7 @@
             Name = "ResetPassword";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ResetPassword";
+            FormClosed += ResetPassword_FormClosed;
             ResumeLayout(false);
             PerformLayout();
         }

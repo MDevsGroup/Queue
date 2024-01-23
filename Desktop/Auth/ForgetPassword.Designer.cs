@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             KodniOlishBtn = new Guna.UI2.WinForms.Guna2Button();
             guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             telBox = new Guna.UI2.WinForms.Guna2TextBox();
@@ -42,7 +42,7 @@
             // 
             KodniOlishBtn.Anchor = AnchorStyles.None;
             KodniOlishBtn.BorderRadius = 6;
-            KodniOlishBtn.CustomizableEdges = customizableEdges5;
+            KodniOlishBtn.CustomizableEdges = customizableEdges1;
             KodniOlishBtn.DisabledState.BorderColor = Color.DarkGray;
             KodniOlishBtn.DisabledState.CustomBorderColor = Color.DarkGray;
             KodniOlishBtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -52,7 +52,7 @@
             KodniOlishBtn.ForeColor = Color.White;
             KodniOlishBtn.Location = new Point(21, 193);
             KodniOlishBtn.Name = "KodniOlishBtn";
-            KodniOlishBtn.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            KodniOlishBtn.ShadowDecoration.CustomizableEdges = customizableEdges2;
             KodniOlishBtn.Size = new Size(340, 39);
             KodniOlishBtn.TabIndex = 30;
             KodniOlishBtn.Text = "Kodni olish";
@@ -76,7 +76,7 @@
             telBox.Anchor = AnchorStyles.None;
             telBox.BorderRadius = 5;
             telBox.BorderThickness = 0;
-            telBox.CustomizableEdges = customizableEdges7;
+            telBox.CustomizableEdges = customizableEdges3;
             telBox.DefaultText = "+998";
             telBox.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             telBox.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -94,7 +94,7 @@
             telBox.PasswordChar = '\0';
             telBox.PlaceholderText = "";
             telBox.SelectedText = "";
-            telBox.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            telBox.ShadowDecoration.CustomizableEdges = customizableEdges4;
             telBox.Size = new Size(340, 40);
             telBox.TabIndex = 28;
             telBox.KeyPress += telBox_KeyPress;
@@ -122,6 +122,7 @@
             Name = "ForgetPassword";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ForgetPassword";
+            FormClosed += ForgetPassword_FormClosed;
             ResumeLayout(false);
             PerformLayout();
         }

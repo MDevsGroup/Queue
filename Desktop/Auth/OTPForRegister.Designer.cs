@@ -167,6 +167,7 @@
             Name = "OTPForRegister";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "OTP";
+            FormClosed += OTPForRegister_FormClosed;
             Load += OTPForRegister_Load;
             ResumeLayout(false);
             PerformLayout();

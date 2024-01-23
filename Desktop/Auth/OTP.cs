@@ -15,7 +15,7 @@ public partial class OTP : Form
 
     public OTP(RegisterDto oTPFor, IUserInterface userInterface, int code)
     {
-        InitializeComponent(); 
+        InitializeComponent();
         _userInterface = userInterface;
         refreshCode = code;
         registerDto = oTPFor;
@@ -93,5 +93,10 @@ public partial class OTP : Form
         int minutes = seconds / 60;
         int remainingSeconds = seconds % 60;
         return $"{minutes:D2}:{remainingSeconds:D2}";
+    }
+
+    private void OTP_FormClosed(object sender, FormClosedEventArgs e)
+    {
+        Application.Exit();
     }
 }

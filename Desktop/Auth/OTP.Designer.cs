@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             SMSKodTextBox = new Guna.UI2.WinForms.Guna2TextBox();
@@ -72,7 +72,7 @@
             SMSKodTextBox.Anchor = AnchorStyles.None;
             SMSKodTextBox.BorderRadius = 5;
             SMSKodTextBox.BorderThickness = 0;
-            SMSKodTextBox.CustomizableEdges = customizableEdges5;
+            SMSKodTextBox.CustomizableEdges = customizableEdges1;
             SMSKodTextBox.DefaultText = "";
             SMSKodTextBox.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             SMSKodTextBox.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -89,7 +89,7 @@
             SMSKodTextBox.PasswordChar = '\0';
             SMSKodTextBox.PlaceholderText = "Tasdiqlash kodni kiriting";
             SMSKodTextBox.SelectedText = "";
-            SMSKodTextBox.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            SMSKodTextBox.ShadowDecoration.CustomizableEdges = customizableEdges2;
             SMSKodTextBox.Size = new Size(286, 34);
             SMSKodTextBox.TabIndex = 5;
             // 
@@ -97,7 +97,7 @@
             // 
             TasdiqlashBtn.Anchor = AnchorStyles.None;
             TasdiqlashBtn.BorderRadius = 6;
-            TasdiqlashBtn.CustomizableEdges = customizableEdges7;
+            TasdiqlashBtn.CustomizableEdges = customizableEdges3;
             TasdiqlashBtn.DisabledState.BorderColor = Color.DarkGray;
             TasdiqlashBtn.DisabledState.CustomBorderColor = Color.DarkGray;
             TasdiqlashBtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -107,7 +107,7 @@
             TasdiqlashBtn.ForeColor = Color.White;
             TasdiqlashBtn.Location = new Point(42, 146);
             TasdiqlashBtn.Name = "TasdiqlashBtn";
-            TasdiqlashBtn.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            TasdiqlashBtn.ShadowDecoration.CustomizableEdges = customizableEdges4;
             TasdiqlashBtn.Size = new Size(286, 36);
             TasdiqlashBtn.TabIndex = 14;
             TasdiqlashBtn.Text = "Tasdiqlash";
@@ -166,6 +166,7 @@
             Name = "OTP";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "OTP";
+            FormClosed += OTP_FormClosed;
             Load += OTP_Load;
             ResumeLayout(false);
             PerformLayout();

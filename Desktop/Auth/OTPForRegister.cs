@@ -4,7 +4,7 @@ using Messager.EskizUz;
 using Toastr.Winforms;
 
 namespace Desktop.Auth
-{ 
+{
     public partial class OTPForRegister : Form
     {
         private readonly IUserInterface _userInterface;
@@ -85,6 +85,11 @@ namespace Desktop.Auth
             int minutes = seconds / 60;
             int remainingSeconds = seconds % 60;
             return $"{minutes:D2}:{remainingSeconds:D2}";
+        }
+
+        private void OTPForRegister_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
