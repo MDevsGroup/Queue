@@ -44,9 +44,10 @@ namespace Desktop.Auth
             {
                 _userInterface.Registration(registerDto);
                 timer.Stop();
-                this.Hide();
+                Hide();
                 Login login = new Login(_userInterface);
-                login.Show();
+                login.ShowDialog();
+                Application.Exit();
             }
             else
             {

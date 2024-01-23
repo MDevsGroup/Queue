@@ -39,9 +39,10 @@ public partial class ForgetPassword : Form
                     this.Invoke((MethodInvoker)delegate
                     {
                         var phoneNumber = telBox.Text;
+                        Hide();
                         OTP otpForm = new OTP(_userInterface, phoneNumber, _code);
-                        this.Hide();
-                        otpForm.Show();
+                        otpForm.ShowDialog();
+                        Application.Exit();
                     });
                 }
                 else

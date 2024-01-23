@@ -29,9 +29,10 @@ namespace Desktop.Auth
                 try
                 {
                     await _userInterface.UpdatePassword(_phoneNumber, ParolTextBox.Text);
+                    Hide();
                     Login login = new(_userInterface);
-                    this.Close();
-                    login.Show();
+                    login.ShowDialog();
+                    Application.Exit();
                 }
                 catch (ArgumentNullException ex)
                 {
@@ -41,7 +42,8 @@ namespace Desktop.Auth
         }
         private void RegisterLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            this.Hide();
+            Hide();
+            
         }
 
         private void ParolTextBox_TextChanged(object sender, EventArgs e)

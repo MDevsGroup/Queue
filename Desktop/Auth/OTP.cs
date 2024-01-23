@@ -35,9 +35,10 @@ public partial class OTP : Form
         if (refreshCode == int.Parse(SMSKodTextBox.Text))
         {
             timer1.Stop();
-            this.Hide();
+            Hide();
             ResetPassword resetPassword = new ResetPassword(_userInterface, _phoneNumber);
-            resetPassword.Show();
+            resetPassword.ShowDialog();
+            Application.Exit();
 
         }
         else

@@ -42,7 +42,7 @@ public partial class Login : Form
         Hide();
         ForgetPassword forgetPassword = new ForgetPassword(_userInterface);
         forgetPassword.ShowDialog();
-        Close();
+        Application.Exit();
     }
 
     private async void KirishBtn_Click(object sender, EventArgs e)
@@ -58,9 +58,10 @@ public partial class Login : Form
         try
         {
             var user = await _userInterface.Login(loginDto);
-            this.Hide();
+            Hide();
             MacBookPro macBookPro = new MacBookPro(user, _userInterface);
-            macBookPro.Show();
+            macBookPro.ShowDialog();
+            Application.Exit();
         }
         catch (Exception)
         {
@@ -87,7 +88,8 @@ public partial class Login : Form
 
         this.Hide();
         Register register = new Register(_userInterface);
-        register.Show();
+        register.ShowDialog();
+        Application.Exit();
     }
 
     private void KirishBtn_Enter(object sender, EventArgs e)

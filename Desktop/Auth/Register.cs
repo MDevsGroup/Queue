@@ -102,7 +102,7 @@ public partial class Register : Form
         Hide();
         Login login = new Login(_userInterface);
         login.ShowDialog();
-        Close();
+        Application.Exit();
     }
 
     public async void SaqlashBtn_Click(object sender, EventArgs e)
