@@ -101,4 +101,7 @@ public class UserService(AppDbContext dbContext) : IUserInterface
          _dbContext.Users.Update(user);
          await _dbContext.SaveChangesAsync();
     }
+
+    public async Task<User> GetByIdAsync(int id)
+        => await _dbContext.Users.FirstOrDefaultAsync(i => i.Id == id);
 }

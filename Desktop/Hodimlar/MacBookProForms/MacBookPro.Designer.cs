@@ -60,7 +60,7 @@
             panel4 = new Panel();
             panel5 = new Panel();
             panel6 = new Panel();
-            controlWaiting1 = new MacBookProForms.ControlWaiting();
+            flowLayoutPanel1 = new FlowLayoutPanel();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).BeginInit();
             panel2.SuspendLayout();
@@ -319,16 +319,14 @@
             panel6.Size = new Size(35, 127);
             panel6.TabIndex = 6;
             // 
-            // controlWaiting1
+            // flowLayoutPanel1
             // 
-            controlWaiting1.AutoSize = true;
-            controlWaiting1.Dock = DockStyle.Fill;
-            controlWaiting1.Location = new Point(335, 110);
-            controlWaiting1.Margin = new Padding(2, 1, 2, 1);
-            controlWaiting1.Name = "controlWaiting1";
-            controlWaiting1.Size = new Size(696, 127);
-            controlWaiting1.TabIndex = 7;
-            controlWaiting1.Load += controlWaiting1_Load;
+            flowLayoutPanel1.AutoScroll = true;
+            flowLayoutPanel1.Dock = DockStyle.Fill;
+            flowLayoutPanel1.Location = new Point(335, 110);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(696, 127);
+            flowLayoutPanel1.TabIndex = 7;
             // 
             // MacBookPro
             // 
@@ -336,7 +334,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonFace;
             ClientSize = new Size(1066, 521);
-            Controls.Add(controlWaiting1);
+            Controls.Add(flowLayoutPanel1);
             Controls.Add(panel6);
             Controls.Add(panel5);
             Controls.Add(panel4);
@@ -349,7 +347,6 @@
             StartPosition = FormStartPosition.CenterScreen;
             Tag = "";
             Text = "MacBookPro";
-            WindowState = FormWindowState.Maximized;
             Load += MacBookPro_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
@@ -358,7 +355,6 @@
             panel2.PerformLayout();
             guna2GradientPanel1.ResumeLayout(false);
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -382,5 +378,6 @@
         private MacBookProForms.ControlWaiting controlWaiting1;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
         private Guna.UI2.WinForms.Guna2Button closeBrt;
+        private FlowLayoutPanel flowLayoutPanel1;
     }
 }

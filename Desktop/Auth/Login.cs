@@ -2,6 +2,7 @@
 using BusinessLogicLayer.Interfaces;
 using BusinessLogicLayer.UserDtos;
 using Desktop.Hodimlar;
+using Microsoft.AspNetCore.SignalR.Client;
 using Toastr.Winforms;
 
 namespace Desktop.Auth;
@@ -9,12 +10,15 @@ namespace Desktop.Auth;
 public partial class Login : Form
 {
     private IUserInterface _userInterface;
-
+    HubConnection connection;
     public Login(IUserInterface userInterface)
     {
         showOnScreen(0);
         InitializeComponent();
         _userInterface = userInterface;
+        connection = new HubConnectionBuilder()
+            .WithUrl("wss://localhost:1808/network")
+            .Build();
     }
 
     private void telBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -58,8 +62,19 @@ public partial class Login : Form
         {
             var user = await _userInterface.Login(loginDto);
             Hide();
-            MacBookPro macBookPro = new MacBookPro(user, _userInterface);
-            macBookPro.Show();
+
+            await connection.StartAsync();
+            await connection.InvokeAsync("JoinNetwork", 
+                new NetworkUser()
+                {
+                    UserId = user.Id,
+                    ConnectionId = connection.ConnectionId
+                }
+            );
+
+            MacBookPro macBookPro = new MacBookPro(connection, user, _userInterface);
+            macBookPro.ShowDialog();
+            Close();
         }
         catch (Exception)
         {

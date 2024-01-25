@@ -14,4 +14,6 @@ public interface IUserInterface
     Task UpdatePassword(string phoneNumber, string newPassword);
     Task<List<User>> GetOnlineUsers();
     Task UpdateOnlineUser(User user);
+
+    Task<User> GetByIdAsync(int id);
 }

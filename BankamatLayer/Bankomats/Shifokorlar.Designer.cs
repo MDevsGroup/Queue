@@ -44,8 +44,10 @@
             // 
             // guna2Panel1
             // 
+            guna2Panel1.BackColor = Color.FromArgb(192, 255, 255);
             guna2Panel1.Controls.Add(level);
             guna2Panel1.Controls.Add(Ism);
+            guna2Panel1.Cursor = Cursors.Hand;
             guna2Panel1.CustomizableEdges = customizableEdges1;
             guna2Panel1.Dock = DockStyle.Left;
             guna2Panel1.Location = new Point(0, 0);
@@ -53,6 +55,7 @@
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges2;
             guna2Panel1.Size = new Size(498, 58);
             guna2Panel1.TabIndex = 0;
+            guna2Panel1.Click += guna2Panel1_Click;
             guna2Panel1.Paint += guna2Panel1_Paint;
             // 
             // level
@@ -64,6 +67,7 @@
             level.Size = new Size(47, 21);
             level.TabIndex = 3;
             level.Text = "kasbi";
+            level.Click += guna2Panel1_Click;
             // 
             // Ism
             // 
@@ -74,10 +78,12 @@
             Ism.Size = new Size(117, 25);
             Ism.TabIndex = 2;
             Ism.Text = "Ism familiya";
+            Ism.Click += guna2Panel1_Click;
             // 
             // guna2Panel2
             // 
             guna2Panel2.Controls.Add(guna2HtmlLabel1);
+            guna2Panel2.Cursor = Cursors.Hand;
             guna2Panel2.CustomizableEdges = customizableEdges3;
             guna2Panel2.Dock = DockStyle.Fill;
             guna2Panel2.FillColor = Color.PaleGreen;
@@ -86,6 +92,7 @@
             guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges4;
             guna2Panel2.Size = new Size(236, 58);
             guna2Panel2.TabIndex = 1;
+            guna2Panel2.Click += guna2Panel1_Click;
             // 
             // guna2HtmlLabel1
             // 
@@ -96,6 +103,7 @@
             guna2HtmlLabel1.Size = new Size(80, 23);
             guna2HtmlLabel1.TabIndex = 0;
             guna2HtmlLabel1.Text = "Kutmoqda";
+            guna2HtmlLabel1.Click += guna2Panel1_Click;
             // 
             // Shifokorlar
             // 

@@ -12,8 +12,18 @@ namespace BankamatLayer
     internal static class Program
     {
         [STAThread]
-        static void Main()
+        static void Main(string[] args)
         {
+            var builder = WebApplication.CreateBuilder(args);
+            builder.Services.AddSignalR();
+            builder.WebHost.UseWebRoot("wwwroot");
+            builder.WebHost.UseUrls("https://localhost:1808");
+
+            var app = builder.Build();
+            app.MapHub<NetworkHub>("/network");
+            Task.Run(() => app.Run());
+
+
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
@@ -30,7 +40,7 @@ namespace BankamatLayer
 
         private static void ConfigureServices(IServiceCollection services)
         {
-            const string connectionString = "Host=192.168.33.89;Port=5432;Database=Navbat;Username=postgres;Password=1234";
+            const string connectionString = "Host=localhost;Port=5432;Database=Navbat;Username=postgres;Password=1234";
 
             services.AddDbContext<AppDbContext>(options =>
                 options.UseNpgsql(connectionString, o => o.EnableRetryOnFailure()), ServiceLifetime.Transient, ServiceLifetime.Transient);
