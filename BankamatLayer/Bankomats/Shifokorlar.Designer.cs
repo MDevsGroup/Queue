@@ -44,7 +44,7 @@
             // 
             // guna2Panel1
             // 
-            guna2Panel1.BackColor = Color.FromArgb(192, 255, 255);
+            guna2Panel1.BackColor = Color.White;
             guna2Panel1.Controls.Add(level);
             guna2Panel1.Controls.Add(Ism);
             guna2Panel1.Cursor = Cursors.Hand;
@@ -86,7 +86,7 @@
             guna2Panel2.Cursor = Cursors.Hand;
             guna2Panel2.CustomizableEdges = customizableEdges3;
             guna2Panel2.Dock = DockStyle.Fill;
-            guna2Panel2.FillColor = Color.PaleGreen;
+            guna2Panel2.FillColor = Color.FromArgb(93, 222, 122);
             guna2Panel2.Location = new Point(498, 0);
             guna2Panel2.Name = "guna2Panel2";
             guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges4;
@@ -97,10 +97,11 @@
             // guna2HtmlLabel1
             // 
             guna2HtmlLabel1.BackColor = Color.Transparent;
-            guna2HtmlLabel1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            guna2HtmlLabel1.Font = new Font("Segoe UI Semibold", 13F, FontStyle.Bold);
+            guna2HtmlLabel1.ForeColor = Color.White;
             guna2HtmlLabel1.Location = new Point(78, 3);
             guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            guna2HtmlLabel1.Size = new Size(80, 23);
+            guna2HtmlLabel1.Size = new Size(83, 25);
             guna2HtmlLabel1.TabIndex = 0;
             guna2HtmlLabel1.Text = "Kutmoqda";
             guna2HtmlLabel1.Click += guna2Panel1_Click;
