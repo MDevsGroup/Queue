@@ -53,7 +53,7 @@
             guna2Panel1.Location = new Point(0, 0);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2Panel1.Size = new Size(498, 58);
+            guna2Panel1.Size = new Size(498, 54);
             guna2Panel1.TabIndex = 0;
             guna2Panel1.Click += guna2Panel1_Click;
             guna2Panel1.Paint += guna2Panel1_Paint;
@@ -82,6 +82,7 @@
             // 
             // guna2Panel2
             // 
+            guna2Panel2.BorderColor = Color.Transparent;
             guna2Panel2.Controls.Add(guna2HtmlLabel1);
             guna2Panel2.Cursor = Cursors.Hand;
             guna2Panel2.CustomizableEdges = customizableEdges3;
@@ -90,7 +91,7 @@
             guna2Panel2.Location = new Point(498, 0);
             guna2Panel2.Name = "guna2Panel2";
             guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            guna2Panel2.Size = new Size(236, 58);
+            guna2Panel2.Size = new Size(232, 54);
             guna2Panel2.TabIndex = 1;
             guna2Panel2.Click += guna2Panel1_Click;
             // 
@@ -110,10 +111,12 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.Control;
+            BorderStyle = BorderStyle.Fixed3D;
             Controls.Add(guna2Panel2);
             Controls.Add(guna2Panel1);
             Name = "Shifokorlar";
-            Size = new Size(734, 58);
+            Size = new Size(730, 54);
             guna2Panel1.ResumeLayout(false);
             guna2Panel1.PerformLayout();
             guna2Panel2.ResumeLayout(false);
